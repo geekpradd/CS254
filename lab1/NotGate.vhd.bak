@@ -1,0 +1,8 @@
+entity NotGate is
+	port(X: in bit; O: out bit);
+end entity NotGate;
+
+architecture Struct of NotGate is 
+begin
+	O <= (not X);
+end Struct;

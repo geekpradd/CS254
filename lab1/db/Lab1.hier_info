@@ -1,0 +1,28 @@
+|Lab1
+A => OrGate:Chip1.X
+A => AndGate:Chip2.P
+A => NotGate:Chip3.K
+B => OrGate:Chip1.Y
+B => AndGate:Chip2.Q
+AND_OUT << AndGate:Chip2.R
+OR_OUT << OrGate:Chip1.O
+NOT_OUT << NotGate:Chip3.L
+
+
+|Lab1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab1|NotGate:Chip3
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+

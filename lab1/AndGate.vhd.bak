@@ -1,0 +1,8 @@
+entity AndGate is
+	port(X, Y: in bit; O: out bit);
+end entity AndGate;
+
+architecture Struct of AndGate is 
+begin
+	O <= (X and Y);
+end Struct;
