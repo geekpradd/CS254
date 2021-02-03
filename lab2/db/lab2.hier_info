@@ -1,114 +1,257 @@
-|lab2
-a[0] => FourbyOneMux:Chip1.i[0]
-a[1] => FourbyOneMux:Chip1.i[1]
-a[2] => FourbyOneMux:Chip1.i[2]
-a[3] => FourbyOneMux:Chip1.i[3]
-b[0] => FourbyOneMux:Chip1.sel[0]
-b[1] => FourbyOneMux:Chip1.sel[1]
-c << FourbyOneMux:Chip1.z
+|ThreebyEightDecode
+i[0] => NotGate:Not1.K
+i[0] => AndFour:Chip1.x1
+i[0] => AndFour:Chip3.x1
+i[0] => AndFour:Chip5.x1
+i[0] => AndFour:Chip7.x1
+i[1] => NotGate:Not2.K
+i[1] => AndFour:Chip2.x2
+i[1] => AndFour:Chip3.x2
+i[1] => AndFour:Chip6.x2
+i[1] => AndFour:Chip7.x2
+i[2] => NotGate:Not3.K
+i[2] => AndFour:Chip4.x3
+i[2] => AndFour:Chip5.x3
+i[2] => AndFour:Chip6.x3
+i[2] => AndFour:Chip7.x3
+en => AndFour:Chip0.x4
+en => AndFour:Chip1.x4
+en => AndFour:Chip2.x4
+en => AndFour:Chip3.x4
+en => AndFour:Chip4.x4
+en => AndFour:Chip5.x4
+en => AndFour:Chip6.x4
+en => AndFour:Chip7.x4
+z[0] <= AndFour:Chip0.R
+z[1] <= AndFour:Chip1.R
+z[2] <= AndFour:Chip2.R
+z[3] <= AndFour:Chip3.R
+z[4] <= AndFour:Chip4.R
+z[5] <= AndFour:Chip5.R
+z[6] <= AndFour:Chip6.R
+z[7] <= AndFour:Chip7.R
 
 
-|lab2|FourbyOneMux:Chip1
-i[0] => TwoByOneMux:Chip1.i[0]
-i[1] => TwoByOneMux:Chip2.i[0]
-i[2] => TwoByOneMux:Chip1.i[1]
-i[3] => TwoByOneMux:Chip2.i[1]
-sel[0] => TwoByOneMux:Chip3.sel
-sel[1] => TwoByOneMux:Chip1.sel
-sel[1] => TwoByOneMux:Chip2.sel
-z <= TwoByOneMux:Chip3.z
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip1
-i[0] => AndGate:Chip3.P
-i[1] => AndGate:Chip2.P
-sel => AndGate:Chip2.Q
-sel => NotGate:Chip4.K
-z <= OrGate:Chip1.O
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip1|OrGate:Chip1
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip1|AndGate:Chip2
-P => R.IN0
-Q => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip1|AndGate:Chip3
-P => R.IN0
-Q => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip1|NotGate:Chip4
+|ThreebyEightDecode|NotGate:Not1
 K => L.DATAIN
 L <= K.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip2
-i[0] => AndGate:Chip3.P
-i[1] => AndGate:Chip2.P
-sel => AndGate:Chip2.Q
-sel => NotGate:Chip4.K
-z <= OrGate:Chip1.O
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip2|OrGate:Chip1
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip2|AndGate:Chip2
-P => R.IN0
-Q => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip2|AndGate:Chip3
-P => R.IN0
-Q => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip2|NotGate:Chip4
+|ThreebyEightDecode|NotGate:Not2
 K => L.DATAIN
 L <= K.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip3
-i[0] => AndGate:Chip3.P
-i[1] => AndGate:Chip2.P
-sel => AndGate:Chip2.Q
-sel => NotGate:Chip4.K
-z <= OrGate:Chip1.O
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip3|OrGate:Chip1
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip3|AndGate:Chip2
-P => R.IN0
-Q => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip3|AndGate:Chip3
-P => R.IN0
-Q => R.IN1
-R <= R.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|lab2|FourbyOneMux:Chip1|TwoByOneMux:Chip3|NotGate:Chip4
+|ThreebyEightDecode|NotGate:Not3
 K => L.DATAIN
 L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip0
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip0|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip0|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip0|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip1
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip1|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip2
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip2|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip3
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip3|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip4
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip4|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip5
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip5|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip6
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip6|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip6|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip6|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip7
+x1 => AndGate:Chip1.P
+x2 => AndGate:Chip1.Q
+x3 => AndGate:Chip2.P
+x4 => AndGate:Chip2.Q
+R <= AndGate:Chip3.R
+
+
+|ThreebyEightDecode|AndFour:Chip7|AndGate:Chip1
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip7|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ThreebyEightDecode|AndFour:Chip7|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 

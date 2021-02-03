@@ -1,0 +1,33 @@
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity EightbyThreeEncode is
+	port ( i : in std_logic_vector(7 downto 0):
+	en: in std_logic;
+	z : out std_logic_vector(2 downto 0));
+end entity;
+
+architecture ARCH of EightbyThreeEncode
+	component OrFour is 
+		port (x1,x2,x3,x4 : in std_logic;
+		R : out std_logic);
+	end component;
+	component AndGate is
+		port (P,Q: in std_logic;
+		R: in std_logic);
+	
+	signal ored0, ored1, ored2: std_logic;
+begin 
+	Chip1: OrFour
+		port map(i(1), i(3), i(5), i(7), ored0);
+	Chip2: OrFour
+		port map(i(2), i(3), i(6), i(7), ored1);
+	Chip3: OrFour
+		port map(i(4), i(5), i(6), i(7), ored2);
+	Enable1: AndGate
+		port map(ored0,en,z(0));
+	Enable2: AndGate
+		port map(ored0,en,z(1));
+	Enable3: AndGate
+		port map(ored0,en,z(2));
+end;

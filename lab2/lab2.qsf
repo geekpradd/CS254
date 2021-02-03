@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY lab2
+set_global_assignment -name TOP_LEVEL_ENTITY ThreebyEightDecode
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:02:31  FEBRUARY 03, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -47,3 +47,10 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name VHDL_FILE lab2.vhd
 set_global_assignment -name VHDL_FILE TwoByOneMux.vhd
 set_global_assignment -name VHDL_FILE FourbyOneMux.vhd
+set_global_assignment -name VHDL_FILE OrFour.vhd
+set_global_assignment -name VHDL_FILE EightbyThreeEncode.vhd
+set_global_assignment -name VHDL_FILE AndGate.vhd
+set_global_assignment -name VHDL_FILE OrGate.vhd
+set_global_assignment -name VHDL_FILE NotGate.vhd
+set_global_assignment -name VHDL_FILE ThreebyEightDecode.vhd
+set_global_assignment -name VHDL_FILE AndFour.vhd
