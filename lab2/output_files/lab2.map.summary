@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Thu Feb 04 02:50:20 2021
+Analysis & Synthesis Status : Successful - Thu Feb 04 20:42:11 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : lab2
-Top-level Entity Name : ThreebyEightDecode
+Top-level Entity Name : EightbyThreeEncode
 Family : MAX V
-Total logic elements : 8
+Total logic elements : 5
 Total pins : 12
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
