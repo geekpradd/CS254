@@ -5,10 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrFour.vhd}
-vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd}
 vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndGate.vhd}
 vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrGate.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/NotGate.vhd}
 
 vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TestBench.vhd}
 

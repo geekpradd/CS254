@@ -6,36 +6,30 @@ entity TestBench is
 end TestBench;
 
 architecture tb of TestBench is
-	signal x :std_logic_vector(7 downto 0);
-	signal e: std_logic;
-	signal ou: std_logic_vector(2 downto 0);
-	
-	component EightbyThreeEncode is
-	port ( i : in std_logic_vector(7 downto 0);
-	en: in std_logic;
-	z : out std_logic_vector(2 downto 0));
+	signal x:std_logic_vector(3 downto 0);
+	signal s: std_logic_vector(1 downto 0);
+	signal ou: std_logic;
+	component FourbyOneMux is
+	port ( i : in std_logic_vector(3 downto 0);
+	sel: in std_logic_vector(1 downto 0);
+	z : out std_logic);
 	end component;
 	
 begin 
-	dut_instance: EightbyThreeEncode
-	port map(i => x, en => e,z => ou);
+	dut_instance: FourByOneMux
+	port map(i => x, sel => s,z => ou);
 	
 	process
 	begin 
 	
-	e <= '0';
-	for i in 0 to 7 loop
-		x <= "00000000";
-		x(i) <= '1';
-		wait for 5 ns;
+	for j in 0 to 3 loop
+		s <= std_logic_vector(to_unsigned(j, s'length));
+		for i in 0 to 15 loop
+			x <= std_logic_vector(to_unsigned(i, x'length));
+			wait for 5 ns;
+		end loop;
 	end loop;
-	e <= '1';
-	for i in 0 to 7 loop
-		x <= "00000000";
-		x(i) <= '1';
-		wait for 5 ns;
-	end loop;
-
+	
 	end process;
 end tb;
 	

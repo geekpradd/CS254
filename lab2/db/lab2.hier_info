@@ -1,118 +1,104 @@
-|EightbyThreeEncode
-i[0] => ~NO_FANOUT~
-i[1] => OrFour:Chip1.x1
-i[2] => OrFour:Chip2.x1
-i[3] => OrFour:Chip1.x2
-i[3] => OrFour:Chip2.x2
-i[4] => OrFour:Chip3.x1
-i[5] => OrFour:Chip1.x3
-i[5] => OrFour:Chip3.x2
-i[6] => OrFour:Chip2.x3
-i[6] => OrFour:Chip3.x3
-i[7] => OrFour:Chip1.x4
-i[7] => OrFour:Chip2.x4
-i[7] => OrFour:Chip3.x4
-en => AndGate:Enable1.Q
-en => AndGate:Enable2.Q
-en => AndGate:Enable3.Q
-z[0] <= AndGate:Enable1.R
-z[1] <= AndGate:Enable2.R
-z[2] <= AndGate:Enable3.R
+|FourbyOneMux
+i[0] => TwoByOneMux:Chip1.i[0]
+i[1] => TwoByOneMux:Chip2.i[0]
+i[2] => TwoByOneMux:Chip1.i[1]
+i[3] => TwoByOneMux:Chip2.i[1]
+sel[0] => TwoByOneMux:Chip3.sel
+sel[1] => TwoByOneMux:Chip1.sel
+sel[1] => TwoByOneMux:Chip2.sel
+z << TwoByOneMux:Chip3.z
 
 
-|EightbyThreeEncode|OrFour:Chip1
-x1 => OrGate:Chip1.X
-x2 => OrGate:Chip1.Y
-x3 => OrGate:Chip2.X
-x4 => OrGate:Chip2.Y
-R <= OrGate:Chip3.O
+|FourbyOneMux|TwoByOneMux:Chip1
+i[0] => AndGate:Chip3.P
+i[1] => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
 
 
-|EightbyThreeEncode|OrFour:Chip1|OrGate:Chip1
+|FourbyOneMux|TwoByOneMux:Chip1|OrGate:Chip1
 X => O.IN0
 Y => O.IN1
 O <= O.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|EightbyThreeEncode|OrFour:Chip1|OrGate:Chip2
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip1|OrGate:Chip3
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip2
-x1 => OrGate:Chip1.X
-x2 => OrGate:Chip1.Y
-x3 => OrGate:Chip2.X
-x4 => OrGate:Chip2.Y
-R <= OrGate:Chip3.O
-
-
-|EightbyThreeEncode|OrFour:Chip2|OrGate:Chip1
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip2|OrGate:Chip2
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip2|OrGate:Chip3
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip3
-x1 => OrGate:Chip1.X
-x2 => OrGate:Chip1.Y
-x3 => OrGate:Chip2.X
-x4 => OrGate:Chip2.Y
-R <= OrGate:Chip3.O
-
-
-|EightbyThreeEncode|OrFour:Chip3|OrGate:Chip1
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip3|OrGate:Chip2
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|OrFour:Chip3|OrGate:Chip3
-X => O.IN0
-Y => O.IN1
-O <= O.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|EightbyThreeEncode|AndGate:Enable1
+|FourbyOneMux|TwoByOneMux:Chip1|AndGate:Chip2
 P => R.IN0
 Q => R.IN1
 R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|EightbyThreeEncode|AndGate:Enable2
+|FourbyOneMux|TwoByOneMux:Chip1|AndGate:Chip3
 P => R.IN0
 Q => R.IN1
 R <= R.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|EightbyThreeEncode|AndGate:Enable3
+|FourbyOneMux|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip2
+i[0] => AndGate:Chip3.P
+i[1] => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbyOneMux|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip2|AndGate:Chip2
 P => R.IN0
 Q => R.IN1
 R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip3
+i[0] => AndGate:Chip3.P
+i[1] => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbyOneMux|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbyOneMux|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
 
 

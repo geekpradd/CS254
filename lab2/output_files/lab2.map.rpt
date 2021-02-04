@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Thu Feb 04 20:42:11 2021
+Fri Feb 05 00:38:57 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,13 +41,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Feb 04 20:42:11 2021       ;
+; Analysis & Synthesis Status ; Successful - Fri Feb 05 00:38:57 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; lab2                                        ;
-; Top-level Entity Name       ; EightbyThreeEncode                          ;
+; Top-level Entity Name       ; FourbyOneMux                                ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 5                                           ;
-; Total pins                  ; 12                                          ;
+; Total logic elements        ; 2                                           ;
+; Total pins                  ; 7                                           ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; EightbyThreeEncode ; lab2               ;
+; Top-level entity name                                            ; FourbyOneMux       ; lab2               ;
 ; Family name                                                      ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -139,62 +139,62 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; OrFour.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrFour.vhd             ;         ;
-; EightbyThreeEncode.vhd           ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd ;         ;
-; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndGate.vhd            ;         ;
-; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrGate.vhd             ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd  ;         ;
+; FourbyOneMux.vhd                 ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd ;         ;
+; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndGate.vhd      ;         ;
+; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrGate.vhd       ;         ;
+; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/NotGate.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 5     ;
-;     -- Combinational with no register       ; 5     ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 3     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 2     ;
-;     -- 1 input functions                    ; 0     ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 5     ;
-;     -- arithmetic mode                      ; 0     ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 12    ;
-; Maximum fan-out node                        ; en    ;
-; Maximum fan-out                             ; 3     ;
-; Total fan-out                               ; 19    ;
-; Average fan-out                             ; 1.12  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 2      ;
+;     -- Combinational with no register       ; 2      ;
+;     -- Register only                        ; 0      ;
+;     -- Combinational with a register        ; 0      ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 2      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- 2 input functions                    ; 0      ;
+;     -- 1 input functions                    ; 0      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 2      ;
+;     -- arithmetic mode                      ; 0      ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 0      ;
+;     -- asynchronous clear/load mode         ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+; I/O pins                                    ; 7      ;
+; Maximum fan-out node                        ; sel[0] ;
+; Maximum fan-out                             ; 2      ;
+; Total fan-out                               ; 9      ;
+; Average fan-out                             ; 1.00   ;
++---------------------------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                       ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                 ; Entity Name        ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+--------------------+--------------+
-; |EightbyThreeEncode        ; 5 (0)       ; 0            ; 0          ; 12   ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbyThreeEncode                 ; EightbyThreeEncode ; work         ;
-;    |AndGate:Enable1|       ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbyThreeEncode|AndGate:Enable1 ; AndGate            ; work         ;
-;    |AndGate:Enable2|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbyThreeEncode|AndGate:Enable2 ; AndGate            ; work         ;
-;    |AndGate:Enable3|       ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbyThreeEncode|AndGate:Enable3 ; AndGate            ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+--------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                          ; Entity Name  ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+--------------+--------------+
+; |FourbyOneMux              ; 2 (0)       ; 0            ; 0          ; 7    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbyOneMux                                ; FourbyOneMux ; work         ;
+;    |TwoByOneMux:Chip3|     ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbyOneMux|TwoByOneMux:Chip3              ; TwoByOneMux  ; work         ;
+;       |OrGate:Chip1|       ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbyOneMux|TwoByOneMux:Chip3|OrGate:Chip1 ; OrGate       ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -219,7 +219,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Feb 04 20:42:02 2021
+    Info: Processing started: Fri Feb 05 00:38:41 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -256,20 +256,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file andfour
 Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
     Info (12022): Found design unit 1: TestBench-tb File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TestBench.vhd Line: 8
     Info (12023): Found entity 1: TestBench File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TestBench.vhd Line: 5
-Info (12127): Elaborating entity "EightbyThreeEncode" for the top level hierarchy
-Info (12128): Elaborating entity "OrFour" for hierarchy "OrFour:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd Line: 27
-Info (12128): Elaborating entity "OrGate" for hierarchy "OrFour:Chip1|OrGate:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrFour.vhd Line: 17
-Info (12128): Elaborating entity "AndGate" for hierarchy "AndGate:Enable1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd Line: 35
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "i[0]" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd Line: 6
-Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4759 megabytes
-    Info: Processing ended: Thu Feb 04 20:42:11 2021
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:22
+Info (12127): Elaborating entity "FourbyOneMux" for the top level hierarchy
+Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "TwoByOneMux:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd Line: 19
+Info (12128): Elaborating entity "OrGate" for hierarchy "TwoByOneMux:Chip1|OrGate:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 27
+Info (12128): Elaborating entity "AndGate" for hierarchy "TwoByOneMux:Chip1|AndGate:Chip2" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 30
+Info (12128): Elaborating entity "NotGate" for hierarchy "TwoByOneMux:Chip1|NotGate:Chip4" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 36
+Info (21057): Implemented 9 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4751 megabytes
+    Info: Processing ended: Fri Feb 05 00:38:57 2021
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:20
 
 
