@@ -1,4 +1,6 @@
- library ieee; 
+library work;
+use work.all;
+library ieee; 
 use ieee.std_logic_1164.all;
 
 --Entity to compute AND of inputs. L = NOT K. used to create 2x1 MUX

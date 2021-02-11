@@ -1,0 +1,382 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/simulation/modelsim
+Eandgate
+Z1 w1613059349
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+Z4 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/AndGate.vhd
+Z5 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/AndGate.vhd
+l0
+L7 1
+V_TQA7eG;5m1L@7bMLoL3n1
+!s100 H54hbl=_ZoU?98Ca53>_k2
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1613063554
+!i10b 1
+Z8 !s108 1613063554.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/AndGate.vhd|
+Z10 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/AndGate.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Astruct
+R2
+R3
+DEx4 work 7 andgate 0 22 _TQA7eG;5m1L@7bMLoL3n1
+!i122 1
+l12
+Z13 L11 4
+VcE;2O?liP8E2jgBUJoM631
+!s100 DZk4iPhhXcFcO>l9G`i6z1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eandmux
+Z14 w1613062697
+R2
+R3
+!i122 6
+R0
+Z15 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ANDMux.vhd
+Z16 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ANDMux.vhd
+l0
+L7 1
+VV:d7GiUZ^JIbbHLm`=cG;0
+!s100 8__IKGcFEMeF_UTlL8VC[0
+R6
+31
+R7
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ANDMux.vhd|
+Z18 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ANDMux.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 6 andmux 0 22 V:d7GiUZ^JIbbHLm`=cG;0
+!i122 6
+l22
+Z19 L14 12
+Vf:M6c8lW3KC[OdiYA:=l`1
+!s100 KKfbQGB@eU40DKG18oQ542
+R6
+31
+R7
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Efourbytwoencode
+Z20 w1613063507
+R2
+R3
+!i122 4
+R0
+Z21 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/FourByTwoEncode.vhd
+Z22 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/FourByTwoEncode.vhd
+l0
+L7 1
+VEfZ6_PJORkd]8CH6odf:z3
+!s100 L>aK_UfB<6KM0JEUlW1bR0
+R6
+31
+R7
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/FourByTwoEncode.vhd|
+Z24 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/FourByTwoEncode.vhd|
+!i113 1
+R11
+R12
+Aencode
+R2
+R3
+DEx4 work 15 fourbytwoencode 0 22 EfZ6_PJORkd]8CH6odf:z3
+!i122 4
+l29
+L14 27
+VmY:_P6ccio46BWGha]NGd2
+!s100 5Ym=]d=a7T[GFEo^8dZ5j2
+R6
+31
+R7
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Enotgate
+Z25 w1613059353
+R2
+R3
+!i122 2
+R0
+Z26 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/NotGate.vhd
+Z27 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/NotGate.vhd
+l0
+L7 1
+V=0K`<F=YC8GDdoYi7;DJn3
+!s100 P01J]JGb:I0:^_TNmj>eB2
+R6
+31
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/NotGate.vhd|
+Z29 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/NotGate.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 7 notgate 0 22 =0K`<F=YC8GDdoYi7;DJn3
+!i122 2
+l12
+R13
+V@A=^G1]E6PVZKh2ZHM]b93
+!s100 2G5eUD@i:P:Zc4IF0N:m53
+R6
+31
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12
+Eorgate
+Z30 w1613059357
+R2
+R3
+!i122 8
+R0
+Z31 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/OrGate.vhd
+Z32 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/OrGate.vhd
+l0
+L7 1
+Vkd7e7zV=FQcXC12<CNHA20
+!s100 78mLkk_ZPjXE0D28U_FXP2
+R6
+31
+R7
+!i10b 1
+R8
+Z33 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/OrGate.vhd|
+Z34 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/OrGate.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 6 orgate 0 22 kd7e7zV=FQcXC12<CNHA20
+!i122 8
+l12
+R13
+V^cL?T9R`AgC=4=3iZR`cl3
+!s100 m7dE?hTNhej7z1YcSB4^I3
+R6
+31
+R7
+!i10b 1
+R8
+R33
+R34
+!i113 1
+R11
+R12
+Eormux
+Z35 w1613062734
+R2
+R3
+!i122 5
+R0
+Z36 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ORMux.vhd
+Z37 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ORMux.vhd
+l0
+L7 1
+Va<9NV3NIePU;Z9^M<BIXU0
+!s100 Y6m<0UmhWCX^lMz9c^B:33
+R6
+31
+R7
+!i10b 1
+R8
+Z38 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ORMux.vhd|
+Z39 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ORMux.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 5 ormux 0 22 a<9NV3NIePU;Z9^M<BIXU0
+!i122 5
+l22
+R19
+Vg?gbWKiE2YaOil;_fY>LQ0
+!s100 :M1[3zT8kg=nYU4U<N4=f1
+R6
+31
+R7
+!i10b 1
+R8
+R38
+R39
+!i113 1
+R11
+R12
+Etestbench
+Z40 w1613063536
+Z41 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 9
+R0
+Z42 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd
+Z43 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd
+l0
+L5 1
+VZ=QDQD6L`id6P4Ta6kV>71
+!s100 3i6eAkN?E_`P`z3o4T:bP0
+R6
+31
+Z44 !s110 1613063555
+!i10b 1
+Z45 !s108 1613063555.000000
+Z46 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd|
+Z47 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd|
+!i113 1
+R11
+R12
+Atb
+R41
+R2
+R3
+Z48 DEx4 work 9 testbench 0 22 Z=QDQD6L`id6P4Ta6kV>71
+!i122 9
+l19
+Z49 L8 33
+Z50 Vdied@RCDeo3`n6iLc[;<>1
+Z51 !s100 51n1H^jiX?n;d?@g3n4Ea2
+R6
+31
+R44
+!i10b 1
+R45
+R46
+R47
+!i113 1
+R11
+R12
+Etwobyfourdecode
+Z52 w1613063410
+R2
+R3
+!i122 7
+R0
+Z53 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByFourDecode.vhd
+Z54 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByFourDecode.vhd
+l0
+L8 1
+VaaalPBnbbFd7mW^57UfX:1
+!s100 YSZImL1Gj^RX_mG6AG^4i1
+R6
+31
+R7
+!i10b 1
+R8
+Z55 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByFourDecode.vhd|
+Z56 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByFourDecode.vhd|
+!i113 1
+R11
+R12
+Adecode
+R2
+R3
+DEx4 work 15 twobyfourdecode 0 22 aaalPBnbbFd7mW^57UfX:1
+!i122 7
+l31
+L15 39
+VP;4UQ]zCa8m>]hk3kGD260
+!s100 8CM5V_8n2@XLd1EOW:2oV2
+R6
+31
+R7
+!i10b 1
+R8
+R55
+R56
+!i113 1
+R11
+R12
+Etwobyonemux
+Z57 w1613060139
+R2
+R3
+!i122 3
+R0
+Z58 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByOneMux.vhd
+Z59 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByOneMux.vhd
+l0
+L6 1
+VOgYDWz70>0A[ZCji3JE[J0
+!s100 kz`gHJ;GAE`heV@aD_9Yo0
+R6
+31
+R7
+!i10b 1
+R8
+Z60 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByOneMux.vhd|
+Z61 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByOneMux.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 11 twobyonemux 0 22 OgYDWz70>0A[ZCji3JE[J0
+!i122 3
+l30
+L13 31
+VJ7ZId5jf[=[ae8SC1z7oe1
+!s100 bfVf[CgjCdQ6VAM`WkG533
+R6
+31
+R7
+!i10b 1
+R8
+R60
+R61
+!i113 1
+R11
+R12

@@ -1,4 +1,6 @@
- library ieee; 
+library work;
+use work.all;
+library ieee; 
 use ieee.std_logic_1164.all;
 
 --Entity to compute AND of inputs. R = P AND Q. used to create 2x1 MUX

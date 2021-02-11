@@ -1,13 +1,8 @@
-library work;
-use work.all;
 library ieee; 
 use ieee.std_logic_1164.all;
 
 entity TwoByOneMux is
-port (i0 : in std_logic;
-		i1 : in std_logic;
-		sel : in std_logic; 
-		z : out std_logic);
+port (i : in std_logic_vector(1 downto 0); sel : in std_logic; z : out std_logic);
 end entity;
 
 architecture ARCH of TwoByOneMux is 
@@ -33,10 +28,10 @@ begin
 	port map(x, y, z);
 
 	Chip2: AndGate
-	port map(i1, sel, x);
+	port map(i(1), sel, x);
 	
 	Chip3: AndGate
-	port map(i0, not_sel, y);
+	port map(i(0), not_sel, y);
 
 	Chip4: NotGate
 	port map(sel, not_sel);
