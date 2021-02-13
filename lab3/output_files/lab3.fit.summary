@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Feb 13 22:14:00 2021
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : lab3
+Top-level Entity Name : OnebitFullAdd
+Family : MAX V
+Device : 5M40ZM64C4
+Timing Models : Final
+Total logic elements : 2 / 40 ( 5 % )
+Total pins : 5 / 30 ( 17 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

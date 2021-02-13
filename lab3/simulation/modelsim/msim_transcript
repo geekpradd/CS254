@@ -7,138 +7,170 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work rtl_work 
-# Copying D:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Copying D:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd}
+# vcom -93 -work work {D:/quartus-projects/lab3/Testbench_2mux.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd 
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/Testbench_2mux.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TestBench
 # -- Compiling architecture tb of TestBench
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
+# End time: 22:14:19 on Feb 13,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/AndGate.vhd}
+# vcom -93 -work work {D:/quartus-projects/lab3/TestBenchFull.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/AndGate.vhd 
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/TestBenchFull.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBenchFull
+# -- Compiling architecture tb of TestBenchFull
+# End time: 22:14:19 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/AndGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/AndGate.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity AndGate
 # -- Compiling architecture Struct of AndGate
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
+# End time: 22:14:19 on Feb 13,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/NotGate.vhd}
+# vcom -93 -work work {D:/quartus-projects/lab3/NotGate.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/NotGate.vhd 
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/NotGate.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity NotGate
 # -- Compiling architecture Struct of NotGate
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
+# End time: 22:14:19 on Feb 13,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByOneMux.vhd}
+# vcom -93 -work work {D:/quartus-projects/lab3/OrGate.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByOneMux.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity TwoByOneMux
-# -- Compiling architecture ARCH of TwoByOneMux
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/FourByTwoEncode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/FourByTwoEncode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity FourByTwoEncode
-# -- Compiling architecture Encode of FourByTwoEncode
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ORMux.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ORMux.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ORMux
-# -- Compiling architecture ARCH of ORMux
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ANDMux.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/ANDMux.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ANDMux
-# -- Compiling architecture ARCH of ANDMux
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByFourDecode.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/TwoByFourDecode.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity TwoByFourDecode
-# -- Compiling architecture Decode of TwoByFourDecode
-# End time: 22:42:34 on Feb 11,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/OrGate.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:34 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/OrGate.vhd 
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/OrGate.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity OrGate
 # -- Compiling architecture Struct of OrGate
-# End time: 22:42:35 on Feb 11,2021, Elapsed time: 0:00:01
+# End time: 22:14:19 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/TwoByOneMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/TwoByOneMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TwoByOneMux
+# -- Compiling architecture ARCH of TwoByOneMux
+# End time: 22:14:19 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/FourByTwoEncode.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:19 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/FourByTwoEncode.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FourByTwoEncode
+# -- Compiling architecture Encode of FourByTwoEncode
+# End time: 22:14:20 on Feb 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/ORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:20 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/ORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ORMux
+# -- Compiling architecture ARCH of ORMux
+# End time: 22:14:20 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/ANDMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:20 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/ANDMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ANDMux
+# -- Compiling architecture ARCH of ANDMux
+# End time: 22:14:20 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/OnebitHalfAdd.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:20 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/OnebitHalfAdd.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity OnebitHalfAdd
+# -- Compiling architecture ARCH of OnebitHalfAdd
+# End time: 22:14:20 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/OnebitFullAdd.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:20 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/OnebitFullAdd.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity OnebitFullAdd
+# -- Compiling architecture ARCH of OnebitFullAdd
+# End time: 22:14:20 on Feb 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab3/TwoByFourDecode.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:14:20 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/TwoByFourDecode.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TwoByFourDecode
+# -- Compiling architecture Decode of TwoByFourDecode
+# End time: 22:14:21 on Feb 13,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd}
+# vcom -93 -work work {D:/quartus-projects/lab3/Testbench_2mux.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:42:35 on Feb 11,2021
-# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab3/Testbench_2mux.vhd 
+# Start time: 22:14:21 on Feb 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab3/Testbench_2mux.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity TestBench
 # -- Compiling architecture tb of TestBench
-# End time: 22:42:35 on Feb 11,2021, Elapsed time: 0:00:00
+# End time: 22:14:21 on Feb 13,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
-# Start time: 22:42:35 on Feb 11,2021
+# Start time: 22:14:21 on Feb 13,2021
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.testbench(tb)
-# Loading work.fourbytwoencode(encode)
-# Loading work.ormux(arch)
+# Loading work.onebithalfadd(arch)
 # Loading work.twobyonemux(arch)
 # Loading work.orgate(struct)
 # Loading work.andgate(struct)
 # Loading work.notgate(struct)
-# Loading work.andmux(arch)
 # 
 # add wave *
 # view structure
@@ -146,5 +178,5 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# End time: 22:43:04 on Feb 11,2021, Elapsed time: 0:00:29
+# End time: 22:14:49 on Feb 13,2021, Elapsed time: 0:00:28
 # Errors: 0, Warnings: 0

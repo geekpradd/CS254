@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY TwoByFourDecode
+set_global_assignment -name TOP_LEVEL_ENTITY OnebitFullAdd
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:01:16  FEBRUARY 11, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -67,3 +67,8 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Testbench -section_id Tes
 set_global_assignment -name EDA_TEST_BENCH_FILE Testbench_2mux.vhd -section_id Testbench.vhd
 set_global_assignment -name VHDL_FILE TwoByFourDecode.vhd
 set_global_assignment -name VHDL_FILE Testbench_decode.vhd
+set_global_assignment -name VHDL_FILE OnebitHalfAdd.vhd
+set_global_assignment -name VHDL_FILE OnebitFullAdd.vhd
+set_global_assignment -name SOURCE_FILE TestBenchFull.bhd
+set_global_assignment -name VHDL_FILE TestBenchFull.vhd
+set_global_assignment -name VHDL_FILE TestBenchHalf.vhd

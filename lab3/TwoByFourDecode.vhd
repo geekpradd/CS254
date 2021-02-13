@@ -14,10 +14,10 @@ end entity;
 
 architecture Decode of TwoByFourDecode is
 	component TwoByOneMux is
-port (i0 : in std_logic;
-		i1 : in std_logic;
-		sel : in std_logic; 
-		z : out std_logic);
+		port (i0 : in std_logic;
+				i1 : in std_logic;
+				sel : in std_logic; 
+				z : out std_logic);
 	end component;
 	
 	component ANDMux is

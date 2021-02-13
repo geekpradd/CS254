@@ -38,3 +38,8 @@ begin
 end tb;
 	
 	
+-- above is for two by four mux
+
+
+	
+		

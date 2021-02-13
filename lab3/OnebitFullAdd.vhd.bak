@@ -1,0 +1,30 @@
+library work;
+use work.all;
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity OnebitFullAdd is
+port ( a, b, cin : in std_logic;
+sum, carry: out std_logic);
+end entity;
+
+architecture ARCH of OnebitHalfAdd is 
+	component OnebitHalfAdd is
+	port ( a, b : in std_logic;
+		sum, carry: out std_logic);
+	end component;
+	
+	signal x, y, z, t: std_logic;
+begin 
+
+	Chip1: OnebitHalfAdd
+	port map(a, b, x, y);
+
+	Chip2: OnebitHalfAdd
+	port map(x, cin, sum, z);
+	
+	Chip3: OnebitHalfAdd
+	port map(y, z, carry, t);
+	
+
+end;
