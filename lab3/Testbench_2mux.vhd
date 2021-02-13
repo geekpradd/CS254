@@ -6,40 +6,64 @@ entity TestBench is
 end TestBench;
 
 architecture tb of TestBench is
-	signal x:std_logic_vector(1 downto 0);
-	signal e: std_logic;
-	signal ou: std_logic_vector(3 downto 0);
+	signal x:std_logic;
+	signal y: std_logic;
+	signal z: std_logic;
+	signal sum:std_logic;
+	signal carry: std_logic;
 	
-	component TwoByFourDecode is
-	port ( i : in std_logic_vector(1 downto 0);
-	en: in std_logic;
-	z : out std_logic_vector(3 downto 0));
+	component  OnebitFullAdd is
+		port ( a, b, cin : in std_logic;
+			sum, carry: out std_logic);
 	end component;
 	
+	
 begin 
-	dut_instance: TwoByFourDecode
-	port map(i => x, en => e,z => ou);
+	dut_instance: OnebitFullAdd
+	port map(a => x, b => y, cin=>z, sum => sum, carry=>carry);
+	
 	
 	process
 	begin 
+	x <= '0';
+	y <= '0';
+	z <= '0';
+	wait for 5 ns;
 	
-	e <= '0';
-	for i in 0 to 3 loop
-		x <= std_logic_vector(to_unsigned(i, x'length));
-		wait for 5 ns;
-	end loop;
-	e <= '1';
-	for i in 0 to 3 loop
-		x <= std_logic_vector(to_unsigned(i, x'length));
-		wait for 5 ns;
-	end loop;
-
+	x <= '1';
+	y <= '0';
+	z <= '0';
+	wait for 5 ns;
+	
+	x <= '0';
+	y <= '1';
+	z <= '0';
+	wait for 5 ns;
+	
+	x <= '1';
+	y <= '1';
+	z <= '0';
+	wait for 5 ns;
+	x <= '0';
+	y <= '0';
+	z <= '1';
+	wait for 5 ns;
+	
+	x <= '1';
+	y <= '0';
+	z <= '1';
+	wait for 5 ns;
+	
+	x <= '0';
+	y <= '1';
+	z <= '1';
+	wait for 5 ns;
+	
+	x <= '1';
+	y <= '1';
+	z <= '1';
+	wait for 5 ns;
+	
 	end process;
+	
 end tb;
-	
-	
--- above is for two by four mux
-
-
-	
-		
