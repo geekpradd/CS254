@@ -1,0 +1,2029 @@
+|FourbitFullAdd
+a[0] => OnebitFullAdd:Chip1.a
+a[1] => OnebitFullAdd:Chip2.a
+a[2] => OnebitFullAdd:Chip3.a
+a[3] => OnebitFullAdd:Chip4.a
+b[0] => OnebitFullAdd:Chip1.b
+b[1] => OnebitFullAdd:Chip2.b
+b[2] => OnebitFullAdd:Chip3.b
+b[3] => OnebitFullAdd:Chip4.b
+cin => OnebitFullAdd:Chip1.cin
+sum[0] <= OnebitFullAdd:Chip1.sum
+sum[1] <= OnebitFullAdd:Chip2.sum
+sum[2] <= OnebitFullAdd:Chip3.sum
+sum[3] <= OnebitFullAdd:Chip4.sum
+carry <= OnebitFullAdd:Chip4.carry
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1
+a => OnebitHalfAdd:Chip1.a
+b => OnebitHalfAdd:Chip1.b
+cin => OnebitHalfAdd:Chip2.b
+sum <= OnebitHalfAdd:Chip2.sum
+carry <= OnebitHalfAdd:Chip3.sum
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2
+a => OnebitHalfAdd:Chip1.a
+b => OnebitHalfAdd:Chip1.b
+cin => OnebitHalfAdd:Chip2.b
+sum <= OnebitHalfAdd:Chip2.sum
+carry <= OnebitHalfAdd:Chip3.sum
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3
+a => OnebitHalfAdd:Chip1.a
+b => OnebitHalfAdd:Chip1.b
+cin => OnebitHalfAdd:Chip2.b
+sum <= OnebitHalfAdd:Chip2.sum
+carry <= OnebitHalfAdd:Chip3.sum
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4
+a => OnebitHalfAdd:Chip1.a
+b => OnebitHalfAdd:Chip1.b
+cin => OnebitHalfAdd:Chip2.b
+sum <= OnebitHalfAdd:Chip2.sum
+carry <= OnebitHalfAdd:Chip3.sum
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3
+a => TwoByOneMux:Chip3.sel
+a => TwoByOneMux:Chip5.sel
+b => TwoByOneMux:Chip1.sel
+b => TwoByOneMux:Chip2.sel
+b => TwoByOneMux:Chip4.sel
+sum <= TwoByOneMux:Chip3.z
+carry <= TwoByOneMux:Chip5.z
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip1|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip4|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip5|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+

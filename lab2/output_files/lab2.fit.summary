@@ -1,7 +1,7 @@
-Fitter Status : Successful - Wed Feb 03 21:32:53 2021
+Fitter Status : Successful - Sun Feb 14 16:47:21 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : lab2
-Top-level Entity Name : lab2
+Top-level Entity Name : FourbyOneMux
 Family : MAX V
 Device : 5M40ZM64C4
 Timing Models : Final

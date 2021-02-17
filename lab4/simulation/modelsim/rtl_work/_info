@@ -1,0 +1,382 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/quartus-projects/lab4/simulation/modelsim
+Eandgate
+Z1 w1613229737
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 6
+R0
+Z4 8D:/quartus-projects/lab4/AndGate.vhd
+Z5 FD:/quartus-projects/lab4/AndGate.vhd
+l0
+L7 1
+V_TQA7eG;5m1L@7bMLoL3n1
+!s100 H54hbl=_ZoU?98Ca53>_k2
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1613559005
+!i10b 1
+Z8 !s108 1613559005.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/AndGate.vhd|
+Z10 !s107 D:/quartus-projects/lab4/AndGate.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Astruct
+R2
+R3
+DEx4 work 7 andgate 0 22 _TQA7eG;5m1L@7bMLoL3n1
+!i122 6
+l12
+Z13 L11 4
+VcE;2O?liP8E2jgBUJoM631
+!s100 DZk4iPhhXcFcO>l9G`i6z1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efourbitfulladd
+Z14 w1613558346
+R2
+R3
+!i122 7
+R0
+Z15 8D:/quartus-projects/lab4/FourbitFullAdd.vhd
+Z16 FD:/quartus-projects/lab4/FourbitFullAdd.vhd
+l0
+L6 1
+VABY8zm<2Gbefl_VY28h;>1
+!s100 KE[UMQm7:4I[J=>maSlS<2
+R6
+31
+R7
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/FourbitFullAdd.vhd|
+Z18 !s107 D:/quartus-projects/lab4/FourbitFullAdd.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 14 fourbitfulladd 0 22 ABY8zm<2Gbefl_VY28h;>1
+!i122 7
+l20
+L13 23
+V>B[j=[MbHa6BFYz=mU?U>1
+!s100 oeN5Q:??56=EWIzNoBoR91
+R6
+31
+R7
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Elab4
+Z19 w1613557636
+R2
+R3
+!i122 0
+R0
+Z20 8D:/quartus-projects/lab4/lab4.vhd
+Z21 FD:/quartus-projects/lab4/lab4.vhd
+l0
+L4 1
+VAXYnB44]U:;`^UXenO>6f3
+!s100 5SQl>QPn8f:mM9o:eh93H2
+R6
+31
+Z22 !s110 1613559004
+!i10b 1
+Z23 !s108 1613559004.000000
+Z24 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/lab4.vhd|
+Z25 !s107 D:/quartus-projects/lab4/lab4.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 4 lab4 0 22 AXYnB44]U:;`^UXenO>6f3
+!i122 0
+l19
+L11 13
+Vj7cJo_kb0N@6>gT=UhXd01
+!s100 j2YoBdXB`LEZn@Ji;>]WA0
+R6
+31
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R11
+R12
+Enotgate
+R1
+R2
+R3
+!i122 8
+R0
+Z26 8D:/quartus-projects/lab4/NotGate.vhd
+Z27 FD:/quartus-projects/lab4/NotGate.vhd
+l0
+L7 1
+V=0K`<F=YC8GDdoYi7;DJn3
+!s100 P01J]JGb:I0:^_TNmj>eB2
+R6
+31
+Z28 !s110 1613559006
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/NotGate.vhd|
+Z30 !s107 D:/quartus-projects/lab4/NotGate.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 7 notgate 0 22 =0K`<F=YC8GDdoYi7;DJn3
+!i122 8
+l12
+R13
+V@A=^G1]E6PVZKh2ZHM]b93
+!s100 2G5eUD@i:P:Zc4IF0N:m53
+R6
+31
+R28
+!i10b 1
+R8
+R29
+R30
+!i113 1
+R11
+R12
+Eonebitfulladd
+Z31 w1613235032
+R2
+R3
+!i122 5
+R0
+Z32 8D:/quartus-projects/lab4/OnebitFullAdd.vhd
+Z33 FD:/quartus-projects/lab4/OnebitFullAdd.vhd
+l0
+L6 1
+V3a:HIbGJ:SP?;@Lk;j2X@3
+!s100 0km;YVY5jdhh@L`zQbejh0
+R6
+31
+R7
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/OnebitFullAdd.vhd|
+Z35 !s107 D:/quartus-projects/lab4/OnebitFullAdd.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 13 onebitfulladd 0 22 3a:HIbGJ:SP?;@Lk;j2X@3
+!i122 5
+l19
+L12 20
+Vb5_J?:Rk29B1j?V>=WHLm0
+!s100 I:D[[0?B<Hel0BP;YnWJ`1
+R6
+31
+R7
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12
+Eonebithalfadd
+Z36 w1613234910
+R2
+R3
+!i122 4
+R0
+Z37 8D:/quartus-projects/lab4/OnebitHalfAdd.vhd
+Z38 FD:/quartus-projects/lab4/OnebitHalfAdd.vhd
+l0
+L7 1
+V@>0mm?9E7IA99JIQXZXD<3
+!s100 kYWG=<cgLFOQ=;E_XfM;71
+R6
+31
+R7
+!i10b 1
+R8
+Z39 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/OnebitHalfAdd.vhd|
+Z40 !s107 D:/quartus-projects/lab4/OnebitHalfAdd.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 13 onebithalfadd 0 22 @>0mm?9E7IA99JIQXZXD<3
+!i122 4
+l20
+L11 30
+VElS_UB@k<3Icz8j=CeQhe2
+!s100 =TKTSBLPAFjl1^Gk>aDQ91
+R6
+31
+R7
+!i10b 1
+R8
+R39
+R40
+!i113 1
+R11
+R12
+Eorgate
+R1
+R2
+R3
+!i122 3
+R0
+Z41 8D:/quartus-projects/lab4/OrGate.vhd
+Z42 FD:/quartus-projects/lab4/OrGate.vhd
+l0
+L7 1
+Vkd7e7zV=FQcXC12<CNHA20
+!s100 78mLkk_ZPjXE0D28U_FXP2
+R6
+31
+R7
+!i10b 1
+R23
+Z43 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/OrGate.vhd|
+Z44 !s107 D:/quartus-projects/lab4/OrGate.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 6 orgate 0 22 kd7e7zV=FQcXC12<CNHA20
+!i122 3
+l12
+R13
+V^cL?T9R`AgC=4=3iZR`cl3
+!s100 m7dE?hTNhej7z1YcSB4^I3
+R6
+31
+R7
+!i10b 1
+R23
+R43
+R44
+!i113 1
+R11
+R12
+Etestbench
+Z45 w1613558937
+Z46 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 9
+R0
+Z47 8D:/quartus-projects/lab4/Testbench.vhd
+Z48 FD:/quartus-projects/lab4/Testbench.vhd
+l0
+L5 1
+VZ=QDQD6L`id6P4Ta6kV>71
+!s100 3i6eAkN?E_`P`z3o4T:bP0
+R6
+31
+R28
+!i10b 1
+Z49 !s108 1613559006.000000
+Z50 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/Testbench.vhd|
+Z51 !s107 D:/quartus-projects/lab4/Testbench.vhd|
+!i113 1
+R11
+R12
+Atb
+R46
+R2
+R3
+Z52 DEx4 work 9 testbench 0 22 Z=QDQD6L`id6P4Ta6kV>71
+!i122 9
+l22
+Z53 L8 40
+Z54 Va4`SZ2FXVCQG0c;F1lLD;2
+Z55 !s100 hzm03EFOD1[OXB?l@RFIX0
+R6
+31
+R28
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R11
+R12
+Etwobyonemux
+R1
+R2
+R3
+!i122 2
+R0
+Z56 8D:/quartus-projects/lab4/TwoByOneMux.vhd
+Z57 FD:/quartus-projects/lab4/TwoByOneMux.vhd
+l0
+L6 1
+VOgYDWz70>0A[ZCji3JE[J0
+!s100 kz`gHJ;GAE`heV@aD_9Yo0
+R6
+31
+R22
+!i10b 1
+R23
+Z58 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab4/TwoByOneMux.vhd|
+Z59 !s107 D:/quartus-projects/lab4/TwoByOneMux.vhd|
+!i113 1
+R11
+R12
+Aarch
+R2
+R3
+DEx4 work 11 twobyonemux 0 22 OgYDWz70>0A[ZCji3JE[J0
+!i122 2
+l30
+L13 31
+VJ7ZId5jf[=[ae8SC1z7oe1
+!s100 bfVf[CgjCdQ6VAM`WkG533
+R6
+31
+R22
+!i10b 1
+R23
+R58
+R59
+!i113 1
+R11
+R12

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Fri Feb 05 00:38:57 2021
+Sun Feb 14 16:47:08 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Feb 05 00:38:57 2021       ;
+; Analysis & Synthesis Status ; Successful - Sun Feb 14 16:47:07 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; lab2                                        ;
 ; Top-level Entity Name       ; FourbyOneMux                                ;
@@ -128,8 +128,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -139,17 +139,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd  ;         ;
-; FourbyOneMux.vhd                 ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd ;         ;
-; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndGate.vhd      ;         ;
-; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrGate.vhd       ;         ;
-; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/NotGate.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
+; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/quartus-projects/lab2/TwoByOneMux.vhd  ;         ;
+; FourbyOneMux.vhd                 ; yes             ; User VHDL File  ; D:/quartus-projects/lab2/FourbyOneMux.vhd ;         ;
+; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/quartus-projects/lab2/AndGate.vhd      ;         ;
+; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/quartus-projects/lab2/OrGate.vhd       ;         ;
+; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/quartus-projects/lab2/NotGate.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -219,56 +219,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Feb 05 00:38:41 2021
+    Info: Processing started: Sun Feb 14 16:46:48 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file lab2.vhd
-    Info (12022): Found design unit 1: lab2-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/lab2.vhd Line: 10
-    Info (12023): Found entity 1: lab2 File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/lab2.vhd Line: 4
+    Info (12022): Found design unit 1: lab2-ARCH File: D:/quartus-projects/lab2/lab2.vhd Line: 10
+    Info (12023): Found entity 1: lab2 File: D:/quartus-projects/lab2/lab2.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file twobyonemux.vhd
-    Info (12022): Found design unit 1: TwoByOneMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 8
-    Info (12023): Found entity 1: TwoByOneMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 4
+    Info (12022): Found design unit 1: TwoByOneMux-ARCH File: D:/quartus-projects/lab2/TwoByOneMux.vhd Line: 8
+    Info (12023): Found entity 1: TwoByOneMux File: D:/quartus-projects/lab2/TwoByOneMux.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fourbyonemux.vhd
-    Info (12022): Found design unit 1: FourbyOneMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd Line: 10
-    Info (12023): Found entity 1: FourbyOneMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd Line: 4
+    Info (12022): Found design unit 1: FourbyOneMux-ARCH File: D:/quartus-projects/lab2/FourbyOneMux.vhd Line: 10
+    Info (12023): Found entity 1: FourbyOneMux File: D:/quartus-projects/lab2/FourbyOneMux.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file orfour.vhd
-    Info (12022): Found design unit 1: OrFour-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrFour.vhd Line: 10
-    Info (12023): Found entity 1: OrFour File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrFour.vhd Line: 5
+    Info (12022): Found design unit 1: OrFour-ARCH File: D:/quartus-projects/lab2/OrFour.vhd Line: 10
+    Info (12023): Found entity 1: OrFour File: D:/quartus-projects/lab2/OrFour.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file eightbythreeencode.vhd
-    Info (12022): Found design unit 1: EightbyThreeEncode-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd Line: 11
-    Info (12023): Found entity 1: EightbyThreeEncode File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/EightbyThreeEncode.vhd Line: 5
+    Info (12022): Found design unit 1: EightbyThreeEncode-ARCH File: D:/quartus-projects/lab2/EightbyThreeEncode.vhd Line: 11
+    Info (12023): Found entity 1: EightbyThreeEncode File: D:/quartus-projects/lab2/EightbyThreeEncode.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file andgate.vhd
-    Info (12022): Found design unit 1: AndGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndGate.vhd Line: 9
-    Info (12023): Found entity 1: AndGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndGate.vhd Line: 5
+    Info (12022): Found design unit 1: AndGate-Struct File: D:/quartus-projects/lab2/AndGate.vhd Line: 9
+    Info (12023): Found entity 1: AndGate File: D:/quartus-projects/lab2/AndGate.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file orgate.vhd
-    Info (12022): Found design unit 1: OrGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrGate.vhd Line: 9
-    Info (12023): Found entity 1: OrGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/OrGate.vhd Line: 5
+    Info (12022): Found design unit 1: OrGate-Struct File: D:/quartus-projects/lab2/OrGate.vhd Line: 9
+    Info (12023): Found entity 1: OrGate File: D:/quartus-projects/lab2/OrGate.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file notgate.vhd
-    Info (12022): Found design unit 1: NotGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/NotGate.vhd Line: 9
-    Info (12023): Found entity 1: NotGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/NotGate.vhd Line: 5
+    Info (12022): Found design unit 1: NotGate-Struct File: D:/quartus-projects/lab2/NotGate.vhd Line: 9
+    Info (12023): Found entity 1: NotGate File: D:/quartus-projects/lab2/NotGate.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file threebyeightdecode.vhd
-    Info (12022): Found design unit 1: ThreebyEightDecode-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/ThreebyEightDecode.vhd Line: 12
-    Info (12023): Found entity 1: ThreebyEightDecode File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/ThreebyEightDecode.vhd Line: 6
+    Info (12022): Found design unit 1: ThreebyEightDecode-ARCH File: D:/quartus-projects/lab2/ThreebyEightDecode.vhd Line: 12
+    Info (12023): Found entity 1: ThreebyEightDecode File: D:/quartus-projects/lab2/ThreebyEightDecode.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file andfour.vhd
-    Info (12022): Found design unit 1: AndFour-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndFour.vhd Line: 10
-    Info (12023): Found entity 1: AndFour File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/AndFour.vhd Line: 5
+    Info (12022): Found design unit 1: AndFour-ARCH File: D:/quartus-projects/lab2/AndFour.vhd Line: 10
+    Info (12023): Found entity 1: AndFour File: D:/quartus-projects/lab2/AndFour.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
-    Info (12022): Found design unit 1: TestBench-tb File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TestBench.vhd Line: 8
-    Info (12023): Found entity 1: TestBench File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TestBench.vhd Line: 5
+    Info (12022): Found design unit 1: TestBench-tb File: D:/quartus-projects/lab2/TestBench.vhd Line: 8
+    Info (12023): Found entity 1: TestBench File: D:/quartus-projects/lab2/TestBench.vhd Line: 5
 Info (12127): Elaborating entity "FourbyOneMux" for the top level hierarchy
-Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "TwoByOneMux:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/FourbyOneMux.vhd Line: 19
-Info (12128): Elaborating entity "OrGate" for hierarchy "TwoByOneMux:Chip1|OrGate:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 27
-Info (12128): Elaborating entity "AndGate" for hierarchy "TwoByOneMux:Chip1|AndGate:Chip2" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 30
-Info (12128): Elaborating entity "NotGate" for hierarchy "TwoByOneMux:Chip1|NotGate:Chip4" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab2/TwoByOneMux.vhd Line: 36
+Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "TwoByOneMux:Chip1" File: D:/quartus-projects/lab2/FourbyOneMux.vhd Line: 19
+Info (12128): Elaborating entity "OrGate" for hierarchy "TwoByOneMux:Chip1|OrGate:Chip1" File: D:/quartus-projects/lab2/TwoByOneMux.vhd Line: 27
+Info (12128): Elaborating entity "AndGate" for hierarchy "TwoByOneMux:Chip1|AndGate:Chip2" File: D:/quartus-projects/lab2/TwoByOneMux.vhd Line: 30
+Info (12128): Elaborating entity "NotGate" for hierarchy "TwoByOneMux:Chip1|NotGate:Chip4" File: D:/quartus-projects/lab2/TwoByOneMux.vhd Line: 36
 Info (21057): Implemented 9 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 2 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4751 megabytes
-    Info: Processing ended: Fri Feb 05 00:38:57 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 4749 megabytes
+    Info: Processing ended: Sun Feb 14 16:47:08 2021
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:25
 
 
