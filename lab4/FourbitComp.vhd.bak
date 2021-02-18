@@ -1,0 +1,4 @@
+entity FourbitComp is
+port ( a, b : in std_logic_vector (1 downto 0);
+l, g, e : out std_logic);
+end entity;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Wed Feb 17 16:19:21 2021
+Thu Feb 18 14:49:28 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,12 +14,19 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3"
- 10. Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5"
- 11. Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4"
- 12. Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2"
- 13. Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1"
- 14. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "TwoByOneMux:Lesser_2"
+ 10. Port Connectivity Checks: "TwoByOneMux:Greater_2"
+ 11. Port Connectivity Checks: "TwoByOneMux:Equal"
+ 12. Port Connectivity Checks: "TwoByOneMux:Not_l"
+ 13. Port Connectivity Checks: "TwoByOneMux:Lesser_1"
+ 14. Port Connectivity Checks: "TwoByOneMux:Greater_1"
+ 15. Port Connectivity Checks: "TwoByOneMux:Comb_2"
+ 16. Port Connectivity Checks: "TwoByOneMux:Comb_1"
+ 17. Port Connectivity Checks: "TwoByOneMux:And4"
+ 18. Port Connectivity Checks: "TwoByOneMux:And3"
+ 19. Port Connectivity Checks: "TwoByOneMux:And2"
+ 20. Port Connectivity Checks: "TwoByOneMux:And1"
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Feb 17 16:19:21 2021       ;
+; Analysis & Synthesis Status ; Successful - Thu Feb 18 14:49:28 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; lab4                                        ;
-; Top-level Entity Name       ; FourbitFullAdd                              ;
+; Top-level Entity Name       ; FourbitComp                                 ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 10                                          ;
-; Total pins                  ; 14                                          ;
+; Total logic elements        ; 3                                           ;
+; Total pins                  ; 7                                           ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -63,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; FourbitFullAdd     ; lab4               ;
+; Top-level entity name                                            ; FourbitComp        ; lab4               ;
 ; Family name                                                      ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -133,8 +140,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -144,21 +151,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/TwoByOneMux.vhd    ;         ;
-; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/OrGate.vhd         ;         ;
-; OnebitHalfAdd.vhd                ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/OnebitHalfAdd.vhd  ;         ;
-; OnebitFullAdd.vhd                ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/OnebitFullAdd.vhd  ;         ;
-; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/NotGate.vhd        ;         ;
-; lab4.vhd                         ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/lab4.vhd           ;         ;
-; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/AndGate.vhd        ;         ;
-; FourbitFullAdd.vhd               ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/FourbitFullAdd.vhd ;         ;
-; Testbench.vhd                    ; yes             ; User VHDL File  ; D:/quartus-projects/lab4/Testbench.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/TwoByOneMux.vhd    ;         ;
+; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OrGate.vhd         ;         ;
+; OnebitHalfAdd.vhd                ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OnebitHalfAdd.vhd  ;         ;
+; OnebitFullAdd.vhd                ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OnebitFullAdd.vhd  ;         ;
+; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/NotGate.vhd        ;         ;
+; lab4.vhd                         ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/lab4.vhd           ;         ;
+; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/AndGate.vhd        ;         ;
+; FourbitFullAdd.vhd               ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitFullAdd.vhd ;         ;
+; Testbench.vhd                    ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/Testbench.vhd      ;         ;
+; FourbitComp.vhd                  ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitComp.vhd    ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -166,20 +174,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 10    ;
-;     -- Combinational with no register       ; 10    ;
+; Total logic elements                        ; 3     ;
+;     -- Combinational with no register       ; 3     ;
 ;     -- Register only                        ; 0     ;
 ;     -- Combinational with a register        ; 0     ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 5     ;
-;     -- 3 input functions                    ; 2     ;
-;     -- 2 input functions                    ; 3     ;
+;     -- 4 input functions                    ; 3     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
 ;     -- 1 input functions                    ; 0     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 10    ;
+;     -- normal mode                          ; 3     ;
 ;     -- arithmetic mode                      ; 0     ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
@@ -187,52 +195,27 @@ https://fpgasoftware.intel.com/eula.
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
-; I/O pins                                    ; 14    ;
-; Maximum fan-out node                        ; cin   ;
+; I/O pins                                    ; 7     ;
+; Maximum fan-out node                        ; b[1]  ;
 ; Maximum fan-out                             ; 3     ;
-; Total fan-out                               ; 37    ;
-; Average fan-out                             ; 1.54  ;
+; Total fan-out                               ; 15    ;
+; Average fan-out                             ; 1.50  ;
 +---------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                     ; Entity Name    ; Library Name ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------+----------------+--------------+
-; |FourbitFullAdd              ; 10 (0)      ; 0            ; 0          ; 14   ; 0            ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd                                                                         ; FourbitFullAdd ; work         ;
-;    |OnebitFullAdd:Chip1|     ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip1                                                     ; OnebitFullAdd  ; work         ;
-;       |OnebitHalfAdd:Chip2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip1|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-;    |OnebitFullAdd:Chip2|     ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2                                                     ; OnebitFullAdd  ; work         ;
-;       |OnebitHalfAdd:Chip1|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-;       |OnebitHalfAdd:Chip2|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-;          |TwoByOneMux:Chip5| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5               ; TwoByOneMux    ; work         ;
-;             |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip2|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip2 ; AndGate        ; work         ;
-;    |OnebitFullAdd:Chip3|     ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3                                                     ; OnebitFullAdd  ; work         ;
-;       |OnebitHalfAdd:Chip1|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-;          |TwoByOneMux:Chip5| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5               ; TwoByOneMux    ; work         ;
-;             |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5|AndGate:Chip2 ; AndGate        ; work         ;
-;       |OnebitHalfAdd:Chip2|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-;          |TwoByOneMux:Chip5| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5               ; TwoByOneMux    ; work         ;
-;             |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip3|OnebitHalfAdd:Chip2|TwoByOneMux:Chip5|AndGate:Chip2 ; AndGate        ; work         ;
-;    |OnebitFullAdd:Chip4|     ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4                                                     ; OnebitFullAdd  ; work         ;
-;       |OnebitHalfAdd:Chip2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip2|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-;       |OnebitHalfAdd:Chip3|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3                                 ; OnebitHalfAdd  ; work         ;
-;          |TwoByOneMux:Chip3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3               ; TwoByOneMux    ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitFullAdd|OnebitFullAdd:Chip4|OnebitHalfAdd:Chip3|TwoByOneMux:Chip3|OrGate:Chip1  ; OrGate         ; work         ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------+----------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                             ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+-------------+--------------+
+; |FourbitComp               ; 3 (0)       ; 0            ; 0          ; 7    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp                                    ; FourbitComp ; work         ;
+;    |TwoByOneMux:Equal|     ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp|TwoByOneMux:Equal                  ; TwoByOneMux ; work         ;
+;       |AndGate:Chip3|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp|TwoByOneMux:Equal|AndGate:Chip3    ; AndGate     ; work         ;
+;    |TwoByOneMux:Greater_1| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp|TwoByOneMux:Greater_1              ; TwoByOneMux ; work         ;
+;       |OrGate:Chip1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp|TwoByOneMux:Greater_1|OrGate:Chip1 ; OrGate      ; work         ;
+;    |TwoByOneMux:Lesser_1|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp|TwoByOneMux:Lesser_1               ; TwoByOneMux ; work         ;
+;       |OrGate:Chip1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitComp|TwoByOneMux:Lesser_1|OrGate:Chip1  ; OrGate      ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -251,52 +234,115 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip3"                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Lesser_2" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; i0   ; Input ; Info     ; Stuck at GND           ;
+; i1   ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip5" ;
-+------+-------+----------+-------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                     ;
-+------+-------+----------+-------------------------------------------------------------+
-; i0   ; Input ; Info     ; Stuck at GND                                                ;
-+------+-------+----------+-------------------------------------------------------------+
++---------------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Greater_2" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; i0   ; Input ; Info     ; Stuck at GND            ;
+; i1   ; Input ; Info     ; Stuck at VCC            ;
++------+-------+----------+-------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip4" ;
-+------+-------+----------+-------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                     ;
-+------+-------+----------+-------------------------------------------------------------+
-; i0   ; Input ; Info     ; Stuck at GND                                                ;
-; i1   ; Input ; Info     ; Stuck at VCC                                                ;
-+------+-------+----------+-------------------------------------------------------------+
++-----------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Equal" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; i1   ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip2" ;
-+------+-------+----------+-------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                     ;
-+------+-------+----------+-------------------------------------------------------------+
-; i0   ; Input ; Info     ; Stuck at GND                                                ;
-; i1   ; Input ; Info     ; Stuck at VCC                                                ;
-+------+-------+----------+-------------------------------------------------------------+
++-----------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Not_l" ;
++------+-------+----------+---------------------+
+; Port ; Type  ; Severity ; Details             ;
++------+-------+----------+---------------------+
+; i0   ; Input ; Info     ; Stuck at VCC        ;
+; i1   ; Input ; Info     ; Stuck at GND        ;
++------+-------+----------+---------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1" ;
-+------+-------+----------+-------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                     ;
-+------+-------+----------+-------------------------------------------------------------+
-; i0   ; Input ; Info     ; Stuck at VCC                                                ;
-; i1   ; Input ; Info     ; Stuck at GND                                                ;
-+------+-------+----------+-------------------------------------------------------------+
++--------------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Lesser_1" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; i1   ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Greater_1" ;
++------+-------+----------+-------------------------+
+; Port ; Type  ; Severity ; Details                 ;
++------+-------+----------+-------------------------+
+; i1   ; Input ; Info     ; Stuck at VCC            ;
++------+-------+----------+-------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Comb_2" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; i1   ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:Comb_1" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; i1   ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:And4" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; i1   ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:And3" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; i1   ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:And2" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; i1   ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "TwoByOneMux:And1" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; i1   ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
 
 
 +-------------------------------+
@@ -305,53 +351,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Feb 17 16:19:09 2021
+    Info: Processing started: Thu Feb 18 14:49:19 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file twobyonemux.vhd
-    Info (12022): Found design unit 1: TwoByOneMux-ARCH File: D:/quartus-projects/lab4/TwoByOneMux.vhd Line: 13
-    Info (12023): Found entity 1: TwoByOneMux File: D:/quartus-projects/lab4/TwoByOneMux.vhd Line: 6
+    Info (12022): Found design unit 1: TwoByOneMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/TwoByOneMux.vhd Line: 13
+    Info (12023): Found entity 1: TwoByOneMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/TwoByOneMux.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file orgate.vhd
-    Info (12022): Found design unit 1: OrGate-Struct File: D:/quartus-projects/lab4/OrGate.vhd Line: 11
-    Info (12023): Found entity 1: OrGate File: D:/quartus-projects/lab4/OrGate.vhd Line: 7
+    Info (12022): Found design unit 1: OrGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OrGate.vhd Line: 11
+    Info (12023): Found entity 1: OrGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OrGate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file onebithalfadd.vhd
-    Info (12022): Found design unit 1: OnebitHalfAdd-ARCH File: D:/quartus-projects/lab4/OnebitHalfAdd.vhd Line: 11
-    Info (12023): Found entity 1: OnebitHalfAdd File: D:/quartus-projects/lab4/OnebitHalfAdd.vhd Line: 7
+    Info (12022): Found design unit 1: OnebitHalfAdd-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OnebitHalfAdd.vhd Line: 11
+    Info (12023): Found entity 1: OnebitHalfAdd File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OnebitHalfAdd.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file onebitfulladd.vhd
-    Info (12022): Found design unit 1: OnebitFullAdd-ARCH File: D:/quartus-projects/lab4/OnebitFullAdd.vhd Line: 12
-    Info (12023): Found entity 1: OnebitFullAdd File: D:/quartus-projects/lab4/OnebitFullAdd.vhd Line: 6
+    Info (12022): Found design unit 1: OnebitFullAdd-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OnebitFullAdd.vhd Line: 12
+    Info (12023): Found entity 1: OnebitFullAdd File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/OnebitFullAdd.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file notgate.vhd
-    Info (12022): Found design unit 1: NotGate-Struct File: D:/quartus-projects/lab4/NotGate.vhd Line: 11
-    Info (12023): Found entity 1: NotGate File: D:/quartus-projects/lab4/NotGate.vhd Line: 7
+    Info (12022): Found design unit 1: NotGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/NotGate.vhd Line: 11
+    Info (12023): Found entity 1: NotGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/NotGate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file lab4.vhd
-    Info (12022): Found design unit 1: lab4-ARCH File: D:/quartus-projects/lab4/lab4.vhd Line: 11
-    Info (12023): Found entity 1: lab4 File: D:/quartus-projects/lab4/lab4.vhd Line: 4
+    Info (12022): Found design unit 1: lab4-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/lab4.vhd Line: 11
+    Info (12023): Found entity 1: lab4 File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/lab4.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file andgate.vhd
-    Info (12022): Found design unit 1: AndGate-Struct File: D:/quartus-projects/lab4/AndGate.vhd Line: 11
-    Info (12023): Found entity 1: AndGate File: D:/quartus-projects/lab4/AndGate.vhd Line: 7
+    Info (12022): Found design unit 1: AndGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/AndGate.vhd Line: 11
+    Info (12023): Found entity 1: AndGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/AndGate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitfulladd.vhd
-    Info (12022): Found design unit 1: FourbitFullAdd-ARCH File: D:/quartus-projects/lab4/FourbitFullAdd.vhd Line: 13
-    Info (12023): Found entity 1: FourbitFullAdd File: D:/quartus-projects/lab4/FourbitFullAdd.vhd Line: 6
+    Info (12022): Found design unit 1: FourbitFullAdd-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitFullAdd.vhd Line: 13
+    Info (12023): Found entity 1: FourbitFullAdd File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitFullAdd.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
-    Info (12022): Found design unit 1: TestBench-tb File: D:/quartus-projects/lab4/Testbench.vhd Line: 8
-    Info (12023): Found entity 1: TestBench File: D:/quartus-projects/lab4/Testbench.vhd Line: 5
-Info (12127): Elaborating entity "FourbitFullAdd" for the top level hierarchy
-Info (12128): Elaborating entity "OnebitFullAdd" for hierarchy "OnebitFullAdd:Chip1" File: D:/quartus-projects/lab4/FourbitFullAdd.vhd Line: 21
-Warning (10036): Verilog HDL or VHDL warning at OnebitFullAdd.vhd(18): object "t" assigned a value but never read File: D:/quartus-projects/lab4/OnebitFullAdd.vhd Line: 18
-Info (12128): Elaborating entity "OnebitHalfAdd" for hierarchy "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1" File: D:/quartus-projects/lab4/OnebitFullAdd.vhd Line: 21
-Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1" File: D:/quartus-projects/lab4/OnebitHalfAdd.vhd Line: 22
-Info (12128): Elaborating entity "OrGate" for hierarchy "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|OrGate:Chip1" File: D:/quartus-projects/lab4/TwoByOneMux.vhd Line: 32
-Info (12128): Elaborating entity "AndGate" for hierarchy "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|AndGate:Chip2" File: D:/quartus-projects/lab4/TwoByOneMux.vhd Line: 35
-Info (12128): Elaborating entity "NotGate" for hierarchy "OnebitFullAdd:Chip1|OnebitHalfAdd:Chip1|TwoByOneMux:Chip1|NotGate:Chip4" File: D:/quartus-projects/lab4/TwoByOneMux.vhd Line: 41
-Info (21057): Implemented 24 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 10 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4749 megabytes
-    Info: Processing ended: Wed Feb 17 16:19:21 2021
-    Info: Elapsed time: 00:00:12
+    Info (12022): Found design unit 1: TestBench-tb File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/Testbench.vhd Line: 8
+    Info (12023): Found entity 1: TestBench File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/Testbench.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fourbitcomp.vhd
+    Info (12022): Found design unit 1: FourbitComp-ARCH_Comp File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitComp.vhd Line: 11
+    Info (12023): Found entity 1: FourbitComp File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitComp.vhd Line: 6
+Info (12127): Elaborating entity "FourbitComp" for the top level hierarchy
+Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "TwoByOneMux:And1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/FourbitComp.vhd Line: 24
+Info (12128): Elaborating entity "OrGate" for hierarchy "TwoByOneMux:And1|OrGate:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/TwoByOneMux.vhd Line: 32
+Info (12128): Elaborating entity "AndGate" for hierarchy "TwoByOneMux:And1|AndGate:Chip2" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/TwoByOneMux.vhd Line: 35
+Info (12128): Elaborating entity "NotGate" for hierarchy "TwoByOneMux:And1|NotGate:Chip4" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab4/TwoByOneMux.vhd Line: 41
+Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 3 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4756 megabytes
+    Info: Processing ended: Thu Feb 18 14:49:28 2021
+    Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:21
 
 
