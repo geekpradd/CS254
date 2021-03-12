@@ -1,0 +1,5449 @@
+|EightbitKogStonAddSub
+a[0] => VectorXORMux2:complement.i[0]
+a[1] => VectorXORMux2:complement.i[1]
+a[2] => VectorXORMux2:complement.i[2]
+a[3] => VectorXORMux2:complement.i[3]
+a[4] => VectorXORMux2:complement.i[4]
+a[5] => VectorXORMux2:complement.i[5]
+a[6] => VectorXORMux2:complement.i[6]
+a[7] => VectorXORMux2:complement.i[7]
+b[0] => AdderPreprocess:preprocess.b[0]
+b[1] => AdderPreprocess:preprocess.b[1]
+b[2] => AdderPreprocess:preprocess.b[2]
+b[3] => AdderPreprocess:preprocess.b[3]
+b[4] => AdderPreprocess:preprocess.b[4]
+b[5] => AdderPreprocess:preprocess.b[5]
+b[6] => AdderPreprocess:preprocess.b[6]
+b[7] => AdderPreprocess:preprocess.b[7]
+cin => VectorXORMux2:complement.num
+cin => CarryCalc:carryChip.cin
+cin => CarryHelper:finalcarry.cin
+sum[0] <= VectorXORMux:sumChip.z[0]
+sum[1] <= VectorXORMux:sumChip.z[1]
+sum[2] <= VectorXORMux:sumChip.z[2]
+sum[3] <= VectorXORMux:sumChip.z[3]
+sum[4] <= VectorXORMux:sumChip.z[4]
+sum[5] <= VectorXORMux:sumChip.z[5]
+sum[6] <= VectorXORMux:sumChip.z[6]
+sum[7] <= VectorXORMux:sumChip.z[7]
+cout <= CarryHelper:finalcarry.c
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement
+i[0] => XORMux:chip0.i1
+i[1] => XORMux:chip1.i1
+i[2] => XORMux:chip2.i1
+i[3] => XORMux:chip3.i1
+i[4] => XORMux:chip4.i1
+i[5] => XORMux:chip5.i1
+i[6] => XORMux:chip6.i1
+i[7] => XORMux:chip7.i1
+num => XORMux:chip0.i0
+num => XORMux:chip1.i0
+num => XORMux:chip2.i0
+num => XORMux:chip3.i0
+num => XORMux:chip4.i0
+num => XORMux:chip5.i0
+num => XORMux:chip6.i0
+num => XORMux:chip7.i0
+z[0] <= XORMux:chip0.z
+z[1] <= XORMux:chip1.z
+z[2] <= XORMux:chip2.z
+z[3] <= XORMux:chip3.z
+z[4] <= XORMux:chip4.z
+z[5] <= XORMux:chip5.z
+z[6] <= XORMux:chip6.z
+z[7] <= XORMux:chip7.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip3|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip4|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip5|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip6|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux2:complement|XORMux:chip7|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess
+a[0] => GenAndProp:chip0.a
+a[1] => GenAndProp:chip1.a
+a[2] => GenAndProp:chip2.a
+a[3] => GenAndProp:chip3.a
+a[4] => GenAndProp:chip4.a
+a[5] => GenAndProp:chip5.a
+a[6] => GenAndProp:chip6.a
+a[7] => GenAndProp:chip7.a
+b[0] => GenAndProp:chip0.b
+b[1] => GenAndProp:chip1.b
+b[2] => GenAndProp:chip2.b
+b[3] => GenAndProp:chip3.b
+b[4] => GenAndProp:chip4.b
+b[5] => GenAndProp:chip5.b
+b[6] => GenAndProp:chip6.b
+b[7] => GenAndProp:chip7.b
+c[0] <= GenAndProp:chip0.g
+c[1] <= GenAndProp:chip1.g
+c[2] <= GenAndProp:chip2.g
+c[3] <= GenAndProp:chip3.g
+c[4] <= GenAndProp:chip4.g
+c[5] <= GenAndProp:chip5.g
+c[6] <= GenAndProp:chip6.g
+c[7] <= GenAndProp:chip7.g
+d[0] <= GenAndProp:chip0.p
+d[1] <= GenAndProp:chip1.p
+d[2] <= GenAndProp:chip2.p
+d[3] <= GenAndProp:chip3.p
+d[4] <= GenAndProp:chip4.p
+d[5] <= GenAndProp:chip5.p
+d[6] <= GenAndProp:chip6.p
+d[7] <= GenAndProp:chip7.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7
+a => Propogate:chip1.a
+a => Propogate:chip2.a
+b => Propogate:chip1.b
+b => Propogate:chip2.b
+g <= Propogate:chip1.p
+p <= Propogate:chip2.p
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip1|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2
+a => XORMux:chip2.i1
+b => XORMux:chip2.i0
+p <= XORMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPreprocess:preprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix
+g[0] => AdderCombine:step1_chip0.g2
+g[0] => AdderCombine:step2_chip0.g2
+g[0] => AdderCombine:step3_chip0.g2
+g[0] => gi2zero[0].DATAIN
+g[1] => AdderCombine:step1_chip0.g1
+g[1] => AdderCombine:step1_chip1.g2
+g[2] => AdderCombine:step1_chip1.g1
+g[2] => AdderCombine:step1_chip2.g2
+g[3] => AdderCombine:step1_chip2.g1
+g[3] => AdderCombine:step1_chip3.g2
+g[4] => AdderCombine:step1_chip3.g1
+g[4] => AdderCombine:step1_chip4.g2
+g[5] => AdderCombine:step1_chip4.g1
+g[5] => AdderCombine:step1_chip5.g2
+g[6] => AdderCombine:step1_chip5.g1
+g[6] => AdderCombine:step1_chip6.g2
+g[7] => AdderCombine:step1_chip6.g1
+p[0] => AdderCombine:step1_chip0.p2
+p[0] => AdderCombine:step2_chip0.p2
+p[0] => AdderCombine:step3_chip0.p2
+p[0] => pi2zero[0].DATAIN
+p[1] => AdderCombine:step1_chip0.p1
+p[1] => AdderCombine:step1_chip1.p2
+p[2] => AdderCombine:step1_chip1.p1
+p[2] => AdderCombine:step1_chip2.p2
+p[3] => AdderCombine:step1_chip2.p1
+p[3] => AdderCombine:step1_chip3.p2
+p[4] => AdderCombine:step1_chip3.p1
+p[4] => AdderCombine:step1_chip4.p2
+p[5] => AdderCombine:step1_chip4.p1
+p[5] => AdderCombine:step1_chip5.p2
+p[6] => AdderCombine:step1_chip5.p1
+p[6] => AdderCombine:step1_chip6.p2
+p[7] => AdderCombine:step1_chip6.p1
+gi2zero[0] <= g[0].DB_MAX_OUTPUT_PORT_TYPE
+gi2zero[1] <= AdderCombine:step1_chip0.g
+gi2zero[2] <= AdderCombine:step2_chip0.g
+gi2zero[3] <= AdderCombine:step2_chip1.g
+gi2zero[4] <= AdderCombine:step3_chip0.g
+gi2zero[5] <= AdderCombine:step3_chip1.g
+gi2zero[6] <= AdderCombine:step3_chip2.g
+gi2zero[7] <= AdderCombine:step3_chip3.g
+pi2zero[0] <= p[0].DB_MAX_OUTPUT_PORT_TYPE
+pi2zero[1] <= AdderCombine:step1_chip0.p
+pi2zero[2] <= AdderCombine:step2_chip0.p
+pi2zero[3] <= AdderCombine:step2_chip1.p
+pi2zero[4] <= AdderCombine:step3_chip0.p
+pi2zero[5] <= AdderCombine:step3_chip1.p
+pi2zero[6] <= AdderCombine:step3_chip2.p
+pi2zero[7] <= AdderCombine:step3_chip3.p
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip1|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip2|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip3|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip4|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip5|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step1_chip6|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip0|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip1|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip2|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip3|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip4|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step2_chip5|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip0|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip1|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip2|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3
+g1 => ORMux:chip1.i0
+g2 => ANDMux:chip0.i0
+p1 => ANDMux:chip0.i1
+p1 => ANDMux:chip2.i1
+p2 => ANDMux:chip2.i0
+g <= ORMux:chip1.z
+p <= ANDMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|AdderPrefix:prefix|AdderCombine:step3_chip3|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip
+g[0] => CarryHelper:chip0.g
+g[1] => CarryHelper:chip1.g
+g[2] => CarryHelper:chip2.g
+g[3] => CarryHelper:chip3.g
+g[4] => CarryHelper:chip4.g
+g[5] => CarryHelper:chip5.g
+g[6] => CarryHelper:chip6.g
+g[7] => ~NO_FANOUT~
+p[0] => CarryHelper:chip0.p
+p[1] => CarryHelper:chip1.p
+p[2] => CarryHelper:chip2.p
+p[3] => CarryHelper:chip3.p
+p[4] => CarryHelper:chip4.p
+p[5] => CarryHelper:chip5.p
+p[6] => CarryHelper:chip6.p
+p[7] => ~NO_FANOUT~
+cin => CarryHelper:chip0.cin
+cin => CarryHelper:chip1.cin
+cin => CarryHelper:chip2.cin
+cin => CarryHelper:chip3.cin
+cin => CarryHelper:chip4.cin
+cin => CarryHelper:chip5.cin
+cin => CarryHelper:chip6.cin
+cin => c[0].DATAIN
+c[0] <= cin.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= CarryHelper:chip0.c
+c[2] <= CarryHelper:chip1.c
+c[3] <= CarryHelper:chip2.c
+c[4] <= CarryHelper:chip3.c
+c[5] <= CarryHelper:chip4.c
+c[6] <= CarryHelper:chip5.c
+c[7] <= CarryHelper:chip6.c
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip0|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip1|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip2|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip3|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip4|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip5|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryCalc:carryChip|CarryHelper:chip6|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip
+i0[0] => XORMux:chip0.i1
+i0[1] => XORMux:chip1.i1
+i0[2] => XORMux:chip2.i1
+i0[3] => XORMux:chip3.i1
+i0[4] => XORMux:chip4.i1
+i0[5] => XORMux:chip5.i1
+i0[6] => XORMux:chip6.i1
+i0[7] => XORMux:chip7.i1
+i1[0] => XORMux:chip0.i0
+i1[1] => XORMux:chip1.i0
+i1[2] => XORMux:chip2.i0
+i1[3] => XORMux:chip3.i0
+i1[4] => XORMux:chip4.i0
+i1[5] => XORMux:chip5.i0
+i1[6] => XORMux:chip6.i0
+i1[7] => XORMux:chip7.i0
+z[0] <= XORMux:chip0.z
+z[1] <= XORMux:chip1.z
+z[2] <= XORMux:chip2.z
+z[3] <= XORMux:chip3.z
+z[4] <= XORMux:chip4.z
+z[5] <= XORMux:chip5.z
+z[6] <= XORMux:chip6.z
+z[7] <= XORMux:chip7.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7
+i1 => TwoByOneMux:chip2.sel
+i0 => NOTMux:chip1.i
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|NOTMux:chip1
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry
+g => ORMux:chip1.i0
+p => ANDMux:chip0.i1
+cin => ANDMux:chip0.i0
+c <= ORMux:chip1.z
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ANDMux:chip0
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ANDMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ANDMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ANDMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ANDMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+

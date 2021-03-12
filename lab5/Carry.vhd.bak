@@ -1,0 +1,25 @@
+library work;
+use work.all;
+library ieee; 
+use ieee.std_logic_1164.all;
+
+-- Perform the post-processing step of the Adder i.e to calculate ci for all i.
+entity AdderPostProcess is
+	port ( g, p : in std_logic_vector (7 downto 0);
+	cin : in std_logic_vector(7 downto 0);
+	s: out std_logic_vector (7 downto 0);
+	c: out std_logic
+	);
+end entity;
+
+architecture ARCHPre of AdderPrefix is
+	component AdderCombine is
+		port ( g1, g2 : in std_logic_vector ;
+		 p1, p2 : in std_logic_vector ;
+		g,p: out std_logic_vector
+		);
+	end component;
+	signal carry: std_logic_vector(7 downto 1);
+begin
+		
+end;

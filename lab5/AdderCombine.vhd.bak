@@ -1,0 +1,37 @@
+library work;
+use work.all;
+library ieee; 
+use ieee.std_logic_1164.all;
+
+-- Perform one step of the prefix computation.
+-- g = g1 + p1.g2 
+-- p = p1.p2
+entity AdderCombine is
+	port ( g1, g2 : in std_logic_vector ;
+	 p1, p2 : in std_logic_vector ;
+	g,p: out std_logic_vector
+	);
+end entity;
+
+architecture ARCHComb of AdderCombine is
+	component ANDMux is
+		port( i1: in std_logic;
+		i0: in std_logic;
+		z: out std_logic
+		);
+	end component;
+	component ORMux is
+		port( i1: in std_logic;
+		i0: in std_logic;
+		z: out std_logic
+		);
+	end component;
+	signal pg: std_logic; --store p1.g2
+begin
+	chip0: ANDMux
+		port map(p1,g2,pg);
+	chip1: ORMux
+		port map(pg,g1,g);
+	chip2: ANDMux
+		port map(p1,p2,p);
+end;
