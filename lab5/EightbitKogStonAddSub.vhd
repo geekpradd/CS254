@@ -42,16 +42,16 @@ architecture ARCHAdd of EightbitKogStonAddSub is
 		z: out std_logic_vector(7 downto 0)
 		);
 	end component;
-	signal a_com: std_logic_vector(7 downto 0);
+	signal b_com: std_logic_vector(7 downto 0);
 	signal g, gi: std_logic_vector(7 downto 0);
  	signal p, pi: std_logic_vector(7 downto 0);
 	signal carry: std_logic_vector(7 downto 0);
 begin
 	complement: VectorXORMux2
-		port map(a,cin,a_com);
+		port map(b,cin,b_com);
 		
 	preprocess: AdderPreprocess
-		port map(a_com,b,gi,pi); -- gi[j],pi[j] stores G[j:j],P[j:j] for all j
+		port map(b_com,a,gi,pi); -- gi[j],pi[j] stores G[j:j],P[j:j] for all j
 		
 	prefix: AdderPrefix
 		port map(gi,pi,g,p); -- g[j],p[j] stores G[j:0],P[j:0] for all j
