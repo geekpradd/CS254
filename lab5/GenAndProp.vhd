@@ -23,7 +23,7 @@ architecture ARCHGaP of GenAndProp is
 		);
 	end component;
 begin
-	chip1: Propogate
+	chip1: Generator
 		port map(a,b,g);
 	chip2: Propogate
 		port map(a,b,p);

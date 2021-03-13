@@ -1,0 +1,34 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Testbench.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AndGate.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ORMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/OrGate.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NotGate.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ANDMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Generator.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NOTMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/XORMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Propogate.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/GenAndProp.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPreprocess.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderCombine.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPrefix.vhd}
+
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Testbench.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  TestBench
+
+add wave *
+view structure
+view signals
+run -all

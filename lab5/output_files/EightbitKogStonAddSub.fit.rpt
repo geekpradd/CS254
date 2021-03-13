@@ -1,5 +1,5 @@
 Fitter report for EightbitKogStonAddSub
-Sat Mar 13 16:12:09 2021
+Sat Mar 13 16:47:17 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -54,15 +54,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +-----------------------+---------------------------------------------+
-; Fitter Status         ; Successful - Sat Mar 13 16:12:09 2021       ;
+; Fitter Status         ; Successful - Sat Mar 13 16:47:17 2021       ;
 ; Quartus Prime Version ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name         ; EightbitKogStonAddSub                       ;
-; Top-level Entity Name ; EightbitKogStonAddSub                       ;
+; Top-level Entity Name ; AdderPreprocess                             ;
 ; Family                ; MAX V                                       ;
 ; Device                ; 5M40ZE64C4                                  ;
 ; Timing Models         ; Final                                       ;
-; Total logic elements  ; 9 / 40 ( 23 % )                             ;
-; Total pins            ; 26 / 54 ( 48 % )                            ;
+; Total logic elements  ; 16 / 40 ( 40 % )                            ;
+; Total pins            ; 32 / 54 ( 59 % )                            ;
 ; Total virtual pins    ; 0                                           ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                               ;
 +-----------------------+---------------------------------------------+
@@ -120,8 +120,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -134,7 +134,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitKogStonAddSub.pin.
+The pin-out file can be found in D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/output_files/EightbitKogStonAddSub.pin.
 
 
 +------------------------------------------------------------------+
@@ -142,20 +142,20 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Total logic elements                        ; 9 / 40 ( 23 % )    ;
-;     -- Combinational with no register       ; 9                  ;
+; Total logic elements                        ; 16 / 40 ( 40 % )   ;
+;     -- Combinational with no register       ; 16                 ;
 ;     -- Register only                        ; 0                  ;
 ;     -- Combinational with a register        ; 0                  ;
 ;                                             ;                    ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 7                  ;
-;     -- 3 input functions                    ; 1                  ;
-;     -- 2 input functions                    ; 1                  ;
+;     -- 4 input functions                    ; 0                  ;
+;     -- 3 input functions                    ; 0                  ;
+;     -- 2 input functions                    ; 16                 ;
 ;     -- 1 input functions                    ; 0                  ;
 ;     -- 0 input functions                    ; 0                  ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 9                  ;
+;     -- normal mode                          ; 16                 ;
 ;     -- arithmetic mode                      ; 0                  ;
 ;     -- qfbk mode                            ; 0                  ;
 ;     -- register cascade mode                ; 0                  ;
@@ -163,11 +163,11 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 ;     -- asynchronous clear/load mode         ; 0                  ;
 ;                                             ;                    ;
 ; Total registers                             ; 0 / 40 ( 0 % )     ;
-; Total LABs                                  ; 1 / 4 ( 25 % )     ;
+; Total LABs                                  ; 2 / 4 ( 50 % )     ;
 ; Logic elements in carry chains              ; 0                  ;
 ; Virtual pins                                ; 0                  ;
-; I/O pins                                    ; 26 / 54 ( 48 % )   ;
-;     -- Clock pins                           ; 3 / 4 ( 75 % )     ;
+; I/O pins                                    ; 32 / 54 ( 59 % )   ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )     ;
 ;                                             ;                    ;
 ; UFM blocks                                  ; 0 / 1 ( 0 % )      ;
 ;                                             ;                    ;
@@ -177,12 +177,12 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 ; Global signals                              ; 0                  ;
 ;     -- Global clocks                        ; 0 / 4 ( 0 % )      ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )      ;
-; Average interconnect usage (total/H/V)      ; 3.0% / 2.9% / 3.1% ;
-; Peak interconnect usage (total/H/V)         ; 3.0% / 2.9% / 3.1% ;
+; Average interconnect usage (total/H/V)      ; 3.8% / 3.7% / 4.0% ;
+; Peak interconnect usage (total/H/V)         ; 3.8% / 3.7% / 4.0% ;
 ; Maximum fan-out                             ; 2                  ;
 ; Highest non-global fan-out                  ; 2                  ;
-; Total fan-out                               ; 42                 ;
-; Average fan-out                             ; 1.20               ;
+; Total fan-out                               ; 48                 ;
+; Average fan-out                             ; 1.00               ;
 +---------------------------------------------+--------------------+
 
 
@@ -191,41 +191,47 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ; Slow Slew Rate ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
-; a[0] ; 4     ; 1        ; 1            ; 3            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[1] ; 10    ; 1        ; 1            ; 2            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[2] ; 54    ; 2        ; 4            ; 5            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[3] ; 12    ; 1        ; 1            ; 1            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[4] ; 43    ; 2        ; 8            ; 3            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[5] ; 42    ; 2        ; 8            ; 3            ; 4           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[6] ; 50    ; 2        ; 6            ; 5            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; a[7] ; 48    ; 2        ; 8            ; 4            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[0] ; 64    ; 1        ; 1            ; 4            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[1] ; 22    ; 1        ; 3            ; 0            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[2] ; 59    ; 2        ; 3            ; 5            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[3] ; 24    ; 1        ; 3            ; 0            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[4] ; 38    ; 2        ; 8            ; 2            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[5] ; 40    ; 2        ; 8            ; 2            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[6] ; 7     ; 1        ; 1            ; 3            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; b[7] ; 44    ; 2        ; 8            ; 3            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
-; cin  ; 56    ; 2        ; 3            ; 5            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[0] ; 34    ; 2        ; 8            ; 1            ; 4           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[1] ; 1     ; 1        ; 1            ; 4            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[2] ; 46    ; 2        ; 8            ; 4            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[3] ; 31    ; 1        ; 6            ; 0            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[4] ; 24    ; 1        ; 3            ; 0            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[5] ; 7     ; 1        ; 1            ; 3            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[6] ; 61    ; 2        ; 2            ; 5            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; a[7] ; 5     ; 1        ; 1            ; 3            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[0] ; 29    ; 1        ; 6            ; 0            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[1] ; 33    ; 1        ; 7            ; 0            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[2] ; 13    ; 1        ; 1            ; 1            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[3] ; 27    ; 1        ; 5            ; 0            ; 0           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[4] ; 37    ; 2        ; 8            ; 1            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[5] ; 49    ; 2        ; 6            ; 5            ; 2           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[6] ; 22    ; 1        ; 3            ; 0            ; 3           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
+; b[7] ; 11    ; 1        ; 1            ; 1            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ; no             ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                              ;
-+--------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
-+--------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
-; cout   ; 1     ; 1        ; 1            ; 4            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[0] ; 25    ; 1        ; 3            ; 0            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[1] ; 60    ; 2        ; 3            ; 5            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[2] ; 3     ; 1        ; 1            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[3] ; 52    ; 2        ; 5            ; 5            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[4] ; 51    ; 2        ; 5            ; 5            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[5] ; 58    ; 2        ; 3            ; 5            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[6] ; 55    ; 2        ; 4            ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-; sum[7] ; 5     ; 1        ; 1            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
-+--------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                            ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; c[0] ; 55    ; 2        ; 4            ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[1] ; 10    ; 1        ; 1            ; 2            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[2] ; 45    ; 2        ; 8            ; 4            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[3] ; 3     ; 1        ; 1            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[4] ; 30    ; 1        ; 6            ; 0            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[5] ; 53    ; 2        ; 5            ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[6] ; 64    ; 1        ; 1            ; 4            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; c[7] ; 58    ; 2        ; 3            ; 5            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[0] ; 26    ; 1        ; 5            ; 0            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[1] ; 4     ; 1        ; 1            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[2] ; 38    ; 2        ; 8            ; 2            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[3] ; 35    ; 2        ; 8            ; 1            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[4] ; 48    ; 2        ; 8            ; 4            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[5] ; 56    ; 2        ; 3            ; 5            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[6] ; 60    ; 2        ; 3            ; 5            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; d[7] ; 59    ; 2        ; 3            ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
 
 
 +------------------------------------------------------------+
@@ -233,7 +239,7 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 11 / 27 ( 41 % ) ; 3.3V          ; --           ;
+; 1        ; 17 / 27 ( 63 % ) ; 3.3V          ; --           ;
 ; 2        ; 15 / 27 ( 56 % ) ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -243,19 +249,19 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 +----------+------------+----------+----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 ; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
 +----------+------------+----------+----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
-; 1        ; 2          ; 1        ; cout           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 1        ; 2          ; 1        ; a[1]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 2        ; 3          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 3        ; 4          ; 1        ; sum[2]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 4        ; 5          ; 1        ; a[0]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 5        ; 6          ; 1        ; sum[7]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 3        ; 4          ; 1        ; c[3]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 4        ; 5          ; 1        ; d[1]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 5        ; 6          ; 1        ; a[7]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 6        ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 7        ; 7          ; 1        ; b[6]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 7        ; 7          ; 1        ; a[5]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 8        ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
 ; 9        ; 8          ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 10       ; 11         ; 1        ; a[1]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 11       ; 13         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 12       ; 14         ; 1        ; a[3]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 13       ; 15         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 10       ; 11         ; 1        ; c[1]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 11       ; 13         ; 1        ; b[7]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 12       ; 14         ; 1        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 13       ; 15         ; 1        ; b[2]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 14       ; 16         ; 1        ; #TMS           ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; 15       ; 17         ; 1        ; #TDI           ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; 16       ; 18         ; 1        ; #TCK           ; input  ;              ;         ; --         ;                 ; --       ; --           ;
@@ -264,49 +270,49 @@ The pin-out file can be found in D:/quartus-projects/lab5/output_files/EightbitK
 ; 19       ; 21         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 20       ; 22         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 21       ; 23         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 22       ; 24         ; 1        ; b[1]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 22       ; 24         ; 1        ; b[6]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 23       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 24       ; 25         ; 1        ; b[3]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 25       ; 26         ; 1        ; sum[0]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 26       ; 33         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 27       ; 34         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 24       ; 25         ; 1        ; a[4]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 25       ; 26         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 26       ; 33         ; 1        ; d[0]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 27       ; 34         ; 1        ; b[3]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 28       ; 35         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 29       ; 36         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 30       ; 37         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 31       ; 38         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 29       ; 36         ; 1        ; b[0]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 30       ; 37         ; 1        ; c[4]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 31       ; 38         ; 1        ; a[3]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 32       ; 39         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 33       ; 40         ; 1        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 34       ; 42         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 35       ; 43         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 33       ; 40         ; 1        ; b[1]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 34       ; 42         ; 2        ; a[0]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 35       ; 43         ; 2        ; d[3]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 36       ; 44         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 37       ; 45         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 38       ; 47         ; 2        ; b[4]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 37       ; 45         ; 2        ; b[4]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 38       ; 47         ; 2        ; d[2]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 39       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 40       ; 50         ; 2        ; b[5]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 40       ; 50         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 41       ;            ;          ; VCCINT         ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
-; 42       ; 51         ; 2        ; a[5]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 43       ; 54         ; 2        ; a[4]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 44       ; 55         ; 2        ; b[7]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 45       ; 56         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 46       ; 57         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 42       ; 51         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 43       ; 54         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 44       ; 55         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 45       ; 56         ; 2        ; c[2]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 46       ; 57         ; 2        ; a[2]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 47       ; 58         ; 2        ; GND*           ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 48       ; 59         ; 2        ; a[7]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 49       ; 67         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 50       ; 68         ; 2        ; a[6]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 51       ; 69         ; 2        ; sum[4]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 52       ; 70         ; 2        ; sum[3]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 53       ; 71         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 54       ; 73         ; 2        ; a[2]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 55       ; 75         ; 2        ; sum[6]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 56       ; 76         ; 2        ; cin            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 48       ; 59         ; 2        ; d[4]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 49       ; 67         ; 2        ; b[5]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 50       ; 68         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 51       ; 69         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 52       ; 70         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 53       ; 71         ; 2        ; c[5]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 54       ; 73         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 55       ; 75         ; 2        ; c[0]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 56       ; 76         ; 2        ; d[5]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 57       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 58       ; 77         ; 2        ; sum[5]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 59       ; 78         ; 2        ; b[2]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 60       ; 79         ; 2        ; sum[1]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 61       ; 80         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 58       ; 77         ; 2        ; c[7]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 59       ; 78         ; 2        ; d[7]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 60       ; 79         ; 2        ; d[6]           ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 61       ; 80         ; 2        ; a[6]           ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 62       ; 81         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 63       ; 82         ; 2        ; GND*           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 64       ; 1          ; 1        ; b[0]           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 64       ; 1          ; 1        ; c[6]           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 +----------+------------+----------+----------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
@@ -335,15 +341,22 @@ Note: User assignments will override these defaults. The user specified values a
 +----------+-----------------------------+
 ; Pin Name ; Reason                      ;
 +----------+-----------------------------+
-; sum[0]   ; Missing location assignment ;
-; sum[1]   ; Missing location assignment ;
-; sum[2]   ; Missing location assignment ;
-; sum[3]   ; Missing location assignment ;
-; sum[4]   ; Missing location assignment ;
-; sum[5]   ; Missing location assignment ;
-; sum[6]   ; Missing location assignment ;
-; sum[7]   ; Missing location assignment ;
-; cout     ; Missing location assignment ;
+; c[0]     ; Missing location assignment ;
+; c[1]     ; Missing location assignment ;
+; c[2]     ; Missing location assignment ;
+; c[3]     ; Missing location assignment ;
+; c[4]     ; Missing location assignment ;
+; c[5]     ; Missing location assignment ;
+; c[6]     ; Missing location assignment ;
+; c[7]     ; Missing location assignment ;
+; d[0]     ; Missing location assignment ;
+; d[1]     ; Missing location assignment ;
+; d[2]     ; Missing location assignment ;
+; d[3]     ; Missing location assignment ;
+; d[4]     ; Missing location assignment ;
+; d[5]     ; Missing location assignment ;
+; d[6]     ; Missing location assignment ;
+; d[7]     ; Missing location assignment ;
 ; a[0]     ; Missing location assignment ;
 ; b[0]     ; Missing location assignment ;
 ; a[1]     ; Missing location assignment ;
@@ -360,78 +373,129 @@ Note: User assignments will override these defaults. The user specified values a
 ; b[6]     ; Missing location assignment ;
 ; a[7]     ; Missing location assignment ;
 ; b[7]     ; Missing location assignment ;
-; cin      ; Missing location assignment ;
 +----------+-----------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                               ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+-----------------------+--------------+
-; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                      ; Entity Name           ; Library Name ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+-----------------------+--------------+
-; |EightbitKogStonAddSub       ; 9 (0)       ; 0            ; 0          ; 26   ; 0            ; 9 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub                                                                   ; EightbitKogStonAddSub ; work         ;
-;    |CarryHelper:finalcarry|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|CarryHelper:finalcarry                                            ; CarryHelper           ; work         ;
-;       |ORMux:chip1|          ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1                                ; ORMux                 ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2              ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1 ; OrGate                ; work         ;
-;    |VectorXORMux:sumChip|    ; 8 (0)       ; 0            ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip                                              ; VectorXORMux          ; work         ;
-;       |XORMux:chip1|         ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip3|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip3|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip4|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip4|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip5|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip5|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip6|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip6|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip7|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip7|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-+------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+-----------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                  ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node      ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                            ; Entity Name     ; Library Name ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |AdderPreprocess                ; 16 (0)      ; 0            ; 0          ; 32   ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess                                                                               ; AdderPreprocess ; work         ;
+;    |GenAndProp:chip0|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip0|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip1|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip1|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip2|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip2|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip3|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip3|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip4|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip4|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip5|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip5|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip6|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip6|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
+;    |GenAndProp:chip7|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7                                                              ; GenAndProp      ; work         ;
+;       |Generator:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Generator:chip1                                              ; Generator       ; work         ;
+;          |ANDMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Generator:chip1|ANDMux:chip2                                 ; ANDMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |AndGate:Chip2|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Generator:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2 ; AndGate         ; work         ;
+;       |Propogate:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Propogate:chip2                                              ; Propogate       ; work         ;
+;          |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2                                 ; XORMux          ; work         ;
+;             |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux     ; work         ;
+;                |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |AdderPreprocess|GenAndProp:chip7|Propogate:chip2|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate          ; work         ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------+
-; Delay Chain Summary               ;
-+--------+----------+---------------+
-; Name   ; Pin Type ; Pad to Core 0 ;
-+--------+----------+---------------+
-; sum[0] ; Output   ; --            ;
-; sum[1] ; Output   ; --            ;
-; sum[2] ; Output   ; --            ;
-; sum[3] ; Output   ; --            ;
-; sum[4] ; Output   ; --            ;
-; sum[5] ; Output   ; --            ;
-; sum[6] ; Output   ; --            ;
-; sum[7] ; Output   ; --            ;
-; cout   ; Output   ; --            ;
-; a[0]   ; Input    ; (1)           ;
-; b[0]   ; Input    ; (1)           ;
-; a[1]   ; Input    ; (1)           ;
-; b[1]   ; Input    ; (1)           ;
-; a[2]   ; Input    ; (1)           ;
-; b[2]   ; Input    ; (1)           ;
-; a[3]   ; Input    ; (1)           ;
-; b[3]   ; Input    ; (1)           ;
-; a[4]   ; Input    ; (1)           ;
-; b[4]   ; Input    ; (1)           ;
-; a[5]   ; Input    ; (1)           ;
-; b[5]   ; Input    ; (1)           ;
-; a[6]   ; Input    ; (1)           ;
-; b[6]   ; Input    ; (1)           ;
-; a[7]   ; Input    ; (1)           ;
-; b[7]   ; Input    ; (1)           ;
-; cin    ; Input    ; (1)           ;
-+--------+----------+---------------+
++---------------------------------+
+; Delay Chain Summary             ;
++------+----------+---------------+
+; Name ; Pin Type ; Pad to Core 0 ;
++------+----------+---------------+
+; c[0] ; Output   ; --            ;
+; c[1] ; Output   ; --            ;
+; c[2] ; Output   ; --            ;
+; c[3] ; Output   ; --            ;
+; c[4] ; Output   ; --            ;
+; c[5] ; Output   ; --            ;
+; c[6] ; Output   ; --            ;
+; c[7] ; Output   ; --            ;
+; d[0] ; Output   ; --            ;
+; d[1] ; Output   ; --            ;
+; d[2] ; Output   ; --            ;
+; d[3] ; Output   ; --            ;
+; d[4] ; Output   ; --            ;
+; d[5] ; Output   ; --            ;
+; d[6] ; Output   ; --            ;
+; d[7] ; Output   ; --            ;
+; a[0] ; Input    ; (1)           ;
+; b[0] ; Input    ; (1)           ;
+; a[1] ; Input    ; (1)           ;
+; b[1] ; Input    ; (1)           ;
+; a[2] ; Input    ; (1)           ;
+; b[2] ; Input    ; (1)           ;
+; a[3] ; Input    ; (1)           ;
+; b[3] ; Input    ; (1)           ;
+; a[4] ; Input    ; (1)           ;
+; b[4] ; Input    ; (1)           ;
+; a[5] ; Input    ; (1)           ;
+; b[5] ; Input    ; (1)           ;
+; a[6] ; Input    ; (1)           ;
+; b[6] ; Input    ; (1)           ;
+; a[7] ; Input    ; (1)           ;
+; b[7] ; Input    ; (1)           ;
++------+----------+---------------+
 
 
 +------------------------------------------+
@@ -439,38 +503,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------+
 ; Routing Resource Type ; Usage            ;
 +-----------------------+------------------+
-; C4s                   ; 19 / 784 ( 2 % ) ;
+; C4s                   ; 24 / 784 ( 3 % ) ;
 ; Direct links          ; 0 / 888 ( 0 % )  ;
 ; Global clocks         ; 0 / 4 ( 0 % )    ;
 ; LAB clocks            ; 0 / 32 ( 0 % )   ;
 ; LUT chains            ; 0 / 216 ( 0 % )  ;
-; Local interconnects   ; 29 / 888 ( 3 % ) ;
-; R4s                   ; 16 / 704 ( 2 % ) ;
+; Local interconnects   ; 31 / 888 ( 3 % ) ;
+; R4s                   ; 20 / 704 ( 3 % ) ;
 +-----------------------+------------------+
 
 
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 9.00) ; Number of LABs  (Total = 1) ;
+; Number of Logic Elements  (Average = 8.00) ; Number of LABs  (Total = 2) ;
 +--------------------------------------------+-----------------------------+
 ; 1                                          ; 0                           ;
 ; 2                                          ; 0                           ;
 ; 3                                          ; 0                           ;
 ; 4                                          ; 0                           ;
 ; 5                                          ; 0                           ;
-; 6                                          ; 0                           ;
+; 6                                          ; 1                           ;
 ; 7                                          ; 0                           ;
 ; 8                                          ; 0                           ;
-; 9                                          ; 1                           ;
-; 10                                         ; 0                           ;
+; 9                                          ; 0                           ;
+; 10                                         ; 1                           ;
 +--------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 9.00) ; Number of LABs  (Total = 1) ;
+; Number of Signals Sourced  (Average = 8.00) ; Number of LABs  (Total = 2) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
@@ -478,17 +542,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
+; 6                                           ; 1                           ;
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 9.00) ; Number of LABs  (Total = 1) ;
+; Number of Signals Sourced Out  (Average = 8.00) ; Number of LABs  (Total = 2) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
 ; 1                                               ; 0                           ;
@@ -496,37 +561,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
+; 6                                               ; 1                           ;
 ; 7                                               ; 0                           ;
 ; 8                                               ; 0                           ;
-; 9                                               ; 1                           ;
+; 9                                               ; 0                           ;
+; 10                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
-+----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 17.00) ; Number of LABs  (Total = 1) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 0                           ;
-; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
-; 17                                           ; 1                           ;
-+----------------------------------------------+-----------------------------+
++---------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                       ;
++---------------------------------------------+-----------------------------+
+; Number of Distinct Inputs  (Average = 8.00) ; Number of LABs  (Total = 2) ;
++---------------------------------------------+-----------------------------+
+; 0                                           ; 0                           ;
+; 1                                           ; 0                           ;
+; 2                                           ; 0                           ;
+; 3                                           ; 0                           ;
+; 4                                           ; 0                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 1                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 0                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
++---------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -547,7 +606,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (119004): Automatically selected device 5M40ZE64C4 for design EightbitKogStonAddSub
 Info (119005): Fitting design with smaller device may be possible, but smaller device must be specified
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
@@ -555,7 +614,7 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
     Info (176445): Device 5M80ZE64C4 is compatible
     Info (176445): Device 5M160ZE64C4 is compatible
-Critical Warning (169085): No exact pin location assignment(s) for 26 pins of 26 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Critical Warning (169085): No exact pin location assignment(s) for 32 pins of 32 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'EightbitKogStonAddSub.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
@@ -571,13 +630,13 @@ Info (186468): Started processing fast register assignments
 Info (186469): Finished processing fast register assignments
 Info (176235): Finished register packing
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 26 (unused VREF, 3.3V VCCIO, 17 input, 9 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 32 (unused VREF, 3.3V VCCIO, 16 input, 16 output, 0 bidirectional)
         Info (176212): I/O standards used: 3.3-V LVTTL.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
         Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  27 pins available
         Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  27 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -591,20 +650,20 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file D:/quartus-projects/lab5/output_files/EightbitKogStonAddSub.fit.smsg
+Info (144001): Generated suppressed messages file D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/output_files/EightbitKogStonAddSub.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5323 megabytes
-    Info: Processing ended: Sat Mar 13 16:12:10 2021
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 5517 megabytes
+    Info: Processing ended: Sat Mar 13 16:47:17 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/quartus-projects/lab5/output_files/EightbitKogStonAddSub.fit.smsg.
+The suppressed messages can be found in D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/output_files/EightbitKogStonAddSub.fit.smsg.
 
 
