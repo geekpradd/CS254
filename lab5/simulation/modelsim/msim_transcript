@@ -1,0 +1,254 @@
+# Reading pref.tcl
+# do EightbitKogStonAddSub_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/quartus-projects/lab5/AndGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:17 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/AndGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AndGate
+# -- Compiling architecture Struct of AndGate
+# End time: 16:19:17 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/TwoByOneMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:17 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/TwoByOneMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TwoByOneMux
+# -- Compiling architecture ARCH of TwoByOneMux
+# End time: 16:19:17 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/ORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:17 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/ORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ORMux
+# -- Compiling architecture ARCH of ORMux
+# End time: 16:19:17 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/OrGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:17 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/OrGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity OrGate
+# -- Compiling architecture Struct of OrGate
+# End time: 16:19:17 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/NotGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:17 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/NotGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NotGate
+# -- Compiling architecture Struct of NotGate
+# End time: 16:19:18 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/ANDMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:18 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/ANDMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ANDMux
+# -- Compiling architecture ARCH of ANDMux
+# End time: 16:19:18 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/Generator.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:18 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/Generator.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Generator
+# -- Compiling architecture ARCHGen of Generator
+# End time: 16:19:18 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/NOTMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:18 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/NOTMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NOTMux
+# -- Compiling architecture ARCH of NOTMux
+# End time: 16:19:18 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/XORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:18 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/XORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity XORMux
+# -- Compiling architecture ARCH of XORMux
+# End time: 16:19:18 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/Propogate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:18 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/Propogate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Propogate
+# -- Compiling architecture ARCHProp of Propogate
+# End time: 16:19:19 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/GenAndProp.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:19 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/GenAndProp.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity GenAndProp
+# -- Compiling architecture ARCHGaP of GenAndProp
+# End time: 16:19:19 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/AdderPreprocess.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:19 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/AdderPreprocess.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AdderPreprocess
+# -- Compiling architecture ARCHPre of AdderPreprocess
+# End time: 16:19:20 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:20 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity EightbitKogStonAddSub
+# -- Compiling architecture ARCHAdd of EightbitKogStonAddSub
+# End time: 16:19:20 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/AdderCombine.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:20 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/AdderCombine.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AdderCombine
+# -- Compiling architecture ARCHComb of AdderCombine
+# End time: 16:19:21 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/AdderPrefix.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:21 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/AdderPrefix.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AdderPrefix
+# -- Compiling architecture ARCHPre of AdderPrefix
+# End time: 16:19:22 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/Carry.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:22 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/Carry.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity CarryHelper
+# -- Compiling architecture ARCHCarryHelp of CarryHelper
+# -- Compiling entity CarryCalc
+# -- Compiling architecture ARCHCarry of CarryCalc
+# End time: 16:19:22 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab5/VectorXORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:22 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/VectorXORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity VectorXORMux2
+# -- Compiling architecture ARCHXOR2 of VectorXORMux2
+# -- Compiling entity VectorXORMux
+# -- Compiling architecture ARCHXOR1 of VectorXORMux
+# End time: 16:19:23 on Mar 13,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/quartus-projects/lab5/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:19:23 on Mar 13,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab5/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 16:19:23 on Mar 13,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  TestBench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" TestBench 
+# Start time: 16:19:23 on Mar 13,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# Loading work.eightbitkogstonaddsub(archadd)
+# Loading work.vectorxormux2(archxor2)
+# Loading work.xormux(arch)
+# Loading work.notmux(arch)
+# Loading work.twobyonemux(arch)
+# Loading work.orgate(struct)
+# Loading work.andgate(struct)
+# Loading work.notgate(struct)
+# Loading work.adderpreprocess(archpre)
+# Loading work.genandprop(archgap)
+# Loading work.propogate(archprop)
+# Loading work.adderprefix(archpre)
+# Loading work.addercombine(archcomb)
+# Loading work.andmux(arch)
+# Loading work.ormux(arch)
+# Loading work.carrycalc(archcarry)
+# Loading work.carryhelper(archcarryhelp)
+# Loading work.vectorxormux(archxor1)
+# ** Warning: Design size of 11782 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 16:23:59 on Mar 13,2021, Elapsed time: 0:04:36
+# Errors: 0, Warnings: 1

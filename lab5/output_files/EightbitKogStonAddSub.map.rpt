@@ -1,5 +1,5 @@
 Analysis & Synthesis report for EightbitKogStonAddSub
-Fri Mar 12 17:30:51 2021
+Sat Mar 13 16:11:58 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Mar 12 17:30:51 2021       ;
+; Analysis & Synthesis Status ; Successful - Sat Mar 13 16:11:57 2021       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; EightbitKogStonAddSub                       ;
 ; Top-level Entity Name       ; EightbitKogStonAddSub                       ;
@@ -131,8 +131,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -142,29 +142,29 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
-; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AndGate.vhd               ;         ;
-; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd           ;         ;
-; ORMux.vhd                        ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ORMux.vhd                 ;         ;
-; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/OrGate.vhd                ;         ;
-; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NotGate.vhd               ;         ;
-; ANDMux.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ANDMux.vhd                ;         ;
-; Generator.vhd                    ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Generator.vhd             ;         ;
-; NOTMux.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NOTMux.vhd                ;         ;
-; XORMux.vhd                       ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/XORMux.vhd                ;         ;
-; Propogate.vhd                    ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Propogate.vhd             ;         ;
-; GenAndProp.vhd                   ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/GenAndProp.vhd            ;         ;
-; AdderPreprocess.vhd              ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPreprocess.vhd       ;         ;
-; EightbitKogStonAddSub.vhd        ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd ;         ;
-; AdderCombine.vhd                 ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderCombine.vhd          ;         ;
-; AdderPrefix.vhd                  ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPrefix.vhd           ;         ;
-; Carry.vhd                        ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd                 ;         ;
-; VectorXORMux.vhd                 ; yes             ; User VHDL File  ; D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd          ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; AndGate.vhd                      ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/AndGate.vhd               ;         ;
+; TwoByOneMux.vhd                  ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/TwoByOneMux.vhd           ;         ;
+; ORMux.vhd                        ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/ORMux.vhd                 ;         ;
+; OrGate.vhd                       ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/OrGate.vhd                ;         ;
+; NotGate.vhd                      ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/NotGate.vhd               ;         ;
+; ANDMux.vhd                       ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/ANDMux.vhd                ;         ;
+; Generator.vhd                    ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/Generator.vhd             ;         ;
+; NOTMux.vhd                       ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/NOTMux.vhd                ;         ;
+; XORMux.vhd                       ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/XORMux.vhd                ;         ;
+; Propogate.vhd                    ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/Propogate.vhd             ;         ;
+; GenAndProp.vhd                   ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/GenAndProp.vhd            ;         ;
+; AdderPreprocess.vhd              ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/AdderPreprocess.vhd       ;         ;
+; EightbitKogStonAddSub.vhd        ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd ;         ;
+; AdderCombine.vhd                 ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/AdderCombine.vhd          ;         ;
+; AdderPrefix.vhd                  ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/AdderPrefix.vhd           ;         ;
+; Carry.vhd                        ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/Carry.vhd                 ;         ;
+; VectorXORMux.vhd                 ; yes             ; User VHDL File  ; D:/quartus-projects/lab5/VectorXORMux.vhd          ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -212,12 +212,9 @@ https://fpgasoftware.intel.com/eula.
 ;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2              ; TwoByOneMux           ; work         ;
 ;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|CarryHelper:finalcarry|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1 ; OrGate                ; work         ;
 ;    |VectorXORMux:sumChip|    ; 8 (0)       ; 0            ; 0          ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip                                              ; VectorXORMux          ; work         ;
-;       |XORMux:chip0|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip0|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
-;       |XORMux:chip1|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1                                 ; XORMux                ; work         ;
-;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
-;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
+;       |XORMux:chip1|         ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1                                 ; XORMux                ; work         ;
+;          |TwoByOneMux:chip2| ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
+;             |OrGate:Chip1|   ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
 ;       |XORMux:chip2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2                                 ; XORMux                ; work         ;
 ;          |TwoByOneMux:chip2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2               ; TwoByOneMux           ; work         ;
 ;             |OrGate:Chip1|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |EightbitKogStonAddSub|VectorXORMux:sumChip|XORMux:chip2|TwoByOneMux:chip2|OrGate:Chip1  ; OrGate                ; work         ;
@@ -289,91 +286,91 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Mar 12 17:30:40 2021
+    Info: Processing started: Sat Mar 13 16:11:32 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EightbitKogStonAddSub -c EightbitKogStonAddSub
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file andgate.vhd
-    Info (12022): Found design unit 1: AndGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AndGate.vhd Line: 11
-    Info (12023): Found entity 1: AndGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AndGate.vhd Line: 7
+    Info (12022): Found design unit 1: AndGate-Struct File: D:/quartus-projects/lab5/AndGate.vhd Line: 11
+    Info (12023): Found entity 1: AndGate File: D:/quartus-projects/lab5/AndGate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file twobyonemux.vhd
-    Info (12022): Found design unit 1: TwoByOneMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd Line: 14
-    Info (12023): Found entity 1: TwoByOneMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd Line: 7
+    Info (12022): Found design unit 1: TwoByOneMux-ARCH File: D:/quartus-projects/lab5/TwoByOneMux.vhd Line: 14
+    Info (12023): Found entity 1: TwoByOneMux File: D:/quartus-projects/lab5/TwoByOneMux.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file ormux.vhd
-    Info (12022): Found design unit 1: ORMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ORMux.vhd Line: 14
-    Info (12023): Found entity 1: ORMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ORMux.vhd Line: 7
+    Info (12022): Found design unit 1: ORMux-ARCH File: D:/quartus-projects/lab5/ORMux.vhd Line: 14
+    Info (12023): Found entity 1: ORMux File: D:/quartus-projects/lab5/ORMux.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file orgate.vhd
-    Info (12022): Found design unit 1: OrGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/OrGate.vhd Line: 11
-    Info (12023): Found entity 1: OrGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/OrGate.vhd Line: 7
+    Info (12022): Found design unit 1: OrGate-Struct File: D:/quartus-projects/lab5/OrGate.vhd Line: 11
+    Info (12023): Found entity 1: OrGate File: D:/quartus-projects/lab5/OrGate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file notgate.vhd
-    Info (12022): Found design unit 1: NotGate-Struct File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NotGate.vhd Line: 11
-    Info (12023): Found entity 1: NotGate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NotGate.vhd Line: 7
+    Info (12022): Found design unit 1: NotGate-Struct File: D:/quartus-projects/lab5/NotGate.vhd Line: 11
+    Info (12023): Found entity 1: NotGate File: D:/quartus-projects/lab5/NotGate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file andmux.vhd
-    Info (12022): Found design unit 1: ANDMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ANDMux.vhd Line: 14
-    Info (12023): Found entity 1: ANDMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/ANDMux.vhd Line: 7
+    Info (12022): Found design unit 1: ANDMux-ARCH File: D:/quartus-projects/lab5/ANDMux.vhd Line: 14
+    Info (12023): Found entity 1: ANDMux File: D:/quartus-projects/lab5/ANDMux.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file generator.vhd
-    Info (12022): Found design unit 1: Generator-ARCHGen File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Generator.vhd Line: 13
-    Info (12023): Found entity 1: Generator File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Generator.vhd Line: 7
+    Info (12022): Found design unit 1: Generator-ARCHGen File: D:/quartus-projects/lab5/Generator.vhd Line: 13
+    Info (12023): Found entity 1: Generator File: D:/quartus-projects/lab5/Generator.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file notmux.vhd
-    Info (12022): Found design unit 1: NOTMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NOTMux.vhd Line: 14
-    Info (12023): Found entity 1: NOTMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NOTMux.vhd Line: 7
+    Info (12022): Found design unit 1: NOTMux-ARCH File: D:/quartus-projects/lab5/NOTMux.vhd Line: 14
+    Info (12023): Found entity 1: NOTMux File: D:/quartus-projects/lab5/NOTMux.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file xormux.vhd
-    Info (12022): Found design unit 1: XORMux-ARCH File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/XORMux.vhd Line: 14
-    Info (12023): Found entity 1: XORMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/XORMux.vhd Line: 7
+    Info (12022): Found design unit 1: XORMux-ARCH File: D:/quartus-projects/lab5/XORMux.vhd Line: 14
+    Info (12023): Found entity 1: XORMux File: D:/quartus-projects/lab5/XORMux.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file propogate.vhd
-    Info (12022): Found design unit 1: Propogate-ARCHProp File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Propogate.vhd Line: 13
-    Info (12023): Found entity 1: Propogate File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Propogate.vhd Line: 7
+    Info (12022): Found design unit 1: Propogate-ARCHProp File: D:/quartus-projects/lab5/Propogate.vhd Line: 13
+    Info (12023): Found entity 1: Propogate File: D:/quartus-projects/lab5/Propogate.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file genandprop.vhd
-    Info (12022): Found design unit 1: GenAndProp-ARCHGaP File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/GenAndProp.vhd Line: 13
-    Info (12023): Found entity 1: GenAndProp File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/GenAndProp.vhd Line: 7
+    Info (12022): Found design unit 1: GenAndProp-ARCHGaP File: D:/quartus-projects/lab5/GenAndProp.vhd Line: 13
+    Info (12023): Found entity 1: GenAndProp File: D:/quartus-projects/lab5/GenAndProp.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file adderpreprocess.vhd
-    Info (12022): Found design unit 1: AdderPreprocess-ARCHPre File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPreprocess.vhd Line: 13
-    Info (12023): Found entity 1: AdderPreprocess File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPreprocess.vhd Line: 7
+    Info (12022): Found design unit 1: AdderPreprocess-ARCHPre File: D:/quartus-projects/lab5/AdderPreprocess.vhd Line: 13
+    Info (12023): Found entity 1: AdderPreprocess File: D:/quartus-projects/lab5/AdderPreprocess.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file eightbitkogstonaddsub.vhd
-    Info (12022): Found design unit 1: EightbitKogStonAddSub-ARCHAdd File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 13
-    Info (12023): Found entity 1: EightbitKogStonAddSub File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 6
+    Info (12022): Found design unit 1: EightbitKogStonAddSub-ARCHAdd File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 13
+    Info (12023): Found entity 1: EightbitKogStonAddSub File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file addercombine.vhd
-    Info (12022): Found design unit 1: AdderCombine-ARCHComb File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderCombine.vhd Line: 16
-    Info (12023): Found entity 1: AdderCombine File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderCombine.vhd Line: 9
+    Info (12022): Found design unit 1: AdderCombine-ARCHComb File: D:/quartus-projects/lab5/AdderCombine.vhd Line: 16
+    Info (12023): Found entity 1: AdderCombine File: D:/quartus-projects/lab5/AdderCombine.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file adderprefix.vhd
-    Info (12022): Found design unit 1: AdderPrefix-ARCHPre File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPrefix.vhd Line: 13
-    Info (12023): Found entity 1: AdderPrefix File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPrefix.vhd Line: 7
+    Info (12022): Found design unit 1: AdderPrefix-ARCHPre File: D:/quartus-projects/lab5/AdderPrefix.vhd Line: 13
+    Info (12023): Found entity 1: AdderPrefix File: D:/quartus-projects/lab5/AdderPrefix.vhd Line: 7
 Info (12021): Found 4 design units, including 2 entities, in source file carry.vhd
-    Info (12022): Found design unit 1: CarryHelper-ARCHCarryHelp File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd Line: 12
-    Info (12022): Found design unit 2: CarryCalc-ARCHCarry File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd Line: 47
-    Info (12023): Found entity 1: CarryHelper File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd Line: 7
-    Info (12023): Found entity 2: CarryCalc File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd Line: 40
+    Info (12022): Found design unit 1: CarryHelper-ARCHCarryHelp File: D:/quartus-projects/lab5/Carry.vhd Line: 12
+    Info (12022): Found design unit 2: CarryCalc-ARCHCarry File: D:/quartus-projects/lab5/Carry.vhd Line: 47
+    Info (12023): Found entity 1: CarryHelper File: D:/quartus-projects/lab5/Carry.vhd Line: 7
+    Info (12023): Found entity 2: CarryCalc File: D:/quartus-projects/lab5/Carry.vhd Line: 40
 Info (12021): Found 4 design units, including 2 entities, in source file vectorxormux.vhd
-    Info (12022): Found design unit 1: VectorXORMux2-ARCHXOR2 File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd Line: 14
-    Info (12022): Found design unit 2: VectorXORMux-ARCHXOR1 File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd Line: 53
-    Info (12023): Found entity 1: VectorXORMux2 File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd Line: 7
-    Info (12023): Found entity 2: VectorXORMux File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd Line: 47
+    Info (12022): Found design unit 1: VectorXORMux2-ARCHXOR2 File: D:/quartus-projects/lab5/VectorXORMux.vhd Line: 14
+    Info (12022): Found design unit 2: VectorXORMux-ARCHXOR1 File: D:/quartus-projects/lab5/VectorXORMux.vhd Line: 53
+    Info (12023): Found entity 1: VectorXORMux2 File: D:/quartus-projects/lab5/VectorXORMux.vhd Line: 7
+    Info (12023): Found entity 2: VectorXORMux File: D:/quartus-projects/lab5/VectorXORMux.vhd Line: 47
 Info (12127): Elaborating entity "EightbitKogStonAddSub" for the top level hierarchy
-Info (12128): Elaborating entity "VectorXORMux2" for hierarchy "VectorXORMux2:complement" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 50
-Info (12128): Elaborating entity "XORMux" for hierarchy "VectorXORMux2:complement|XORMux:chip0" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/VectorXORMux.vhd Line: 22
-Info (12128): Elaborating entity "NOTMux" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/XORMux.vhd Line: 30
-Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/NOTMux.vhd Line: 22
-Info (12128): Elaborating entity "OrGate" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd Line: 33
-Info (12128): Elaborating entity "AndGate" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd Line: 36
-Info (12128): Elaborating entity "NotGate" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/TwoByOneMux.vhd Line: 42
-Info (12128): Elaborating entity "AdderPreprocess" for hierarchy "AdderPreprocess:preprocess" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 53
-Info (12128): Elaborating entity "GenAndProp" for hierarchy "AdderPreprocess:preprocess|GenAndProp:chip0" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPreprocess.vhd Line: 20
-Info (12128): Elaborating entity "Propogate" for hierarchy "AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/GenAndProp.vhd Line: 26
-Info (12128): Elaborating entity "AdderPrefix" for hierarchy "AdderPrefix:prefix" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 56
-Info (12128): Elaborating entity "AdderCombine" for hierarchy "AdderPrefix:prefix|AdderCombine:step1_chip0" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderPrefix.vhd Line: 29
-Info (12128): Elaborating entity "ANDMux" for hierarchy "AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderCombine.vhd Line: 31
-Info (12128): Elaborating entity "ORMux" for hierarchy "AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/AdderCombine.vhd Line: 33
-Info (12128): Elaborating entity "CarryCalc" for hierarchy "CarryCalc:carryChip" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 59
-Info (12128): Elaborating entity "CarryHelper" for hierarchy "CarryCalc:carryChip|CarryHelper:chip0" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/Carry.vhd Line: 54
-Info (12128): Elaborating entity "VectorXORMux" for hierarchy "VectorXORMux:sumChip" File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab5/EightbitKogStonAddSub.vhd Line: 62
+Info (12128): Elaborating entity "VectorXORMux2" for hierarchy "VectorXORMux2:complement" File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 50
+Info (12128): Elaborating entity "XORMux" for hierarchy "VectorXORMux2:complement|XORMux:chip0" File: D:/quartus-projects/lab5/VectorXORMux.vhd Line: 22
+Info (12128): Elaborating entity "NOTMux" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1" File: D:/quartus-projects/lab5/XORMux.vhd Line: 30
+Info (12128): Elaborating entity "TwoByOneMux" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2" File: D:/quartus-projects/lab5/NOTMux.vhd Line: 22
+Info (12128): Elaborating entity "OrGate" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|OrGate:Chip1" File: D:/quartus-projects/lab5/TwoByOneMux.vhd Line: 33
+Info (12128): Elaborating entity "AndGate" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|AndGate:Chip2" File: D:/quartus-projects/lab5/TwoByOneMux.vhd Line: 36
+Info (12128): Elaborating entity "NotGate" for hierarchy "VectorXORMux2:complement|XORMux:chip0|NOTMux:chip1|TwoByOneMux:chip2|NotGate:Chip4" File: D:/quartus-projects/lab5/TwoByOneMux.vhd Line: 42
+Info (12128): Elaborating entity "AdderPreprocess" for hierarchy "AdderPreprocess:preprocess" File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 53
+Info (12128): Elaborating entity "GenAndProp" for hierarchy "AdderPreprocess:preprocess|GenAndProp:chip0" File: D:/quartus-projects/lab5/AdderPreprocess.vhd Line: 20
+Info (12128): Elaborating entity "Propogate" for hierarchy "AdderPreprocess:preprocess|GenAndProp:chip0|Propogate:chip1" File: D:/quartus-projects/lab5/GenAndProp.vhd Line: 26
+Info (12128): Elaborating entity "AdderPrefix" for hierarchy "AdderPrefix:prefix" File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 56
+Info (12128): Elaborating entity "AdderCombine" for hierarchy "AdderPrefix:prefix|AdderCombine:step1_chip0" File: D:/quartus-projects/lab5/AdderPrefix.vhd Line: 29
+Info (12128): Elaborating entity "ANDMux" for hierarchy "AdderPrefix:prefix|AdderCombine:step1_chip0|ANDMux:chip0" File: D:/quartus-projects/lab5/AdderCombine.vhd Line: 31
+Info (12128): Elaborating entity "ORMux" for hierarchy "AdderPrefix:prefix|AdderCombine:step1_chip0|ORMux:chip1" File: D:/quartus-projects/lab5/AdderCombine.vhd Line: 33
+Info (12128): Elaborating entity "CarryCalc" for hierarchy "CarryCalc:carryChip" File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 59
+Info (12128): Elaborating entity "CarryHelper" for hierarchy "CarryCalc:carryChip|CarryHelper:chip0" File: D:/quartus-projects/lab5/Carry.vhd Line: 54
+Info (12128): Elaborating entity "VectorXORMux" for hierarchy "VectorXORMux:sumChip" File: D:/quartus-projects/lab5/EightbitKogStonAddSub.vhd Line: 62
 Info (21057): Implemented 35 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 9 output pins
     Info (21061): Implemented 9 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4763 megabytes
-    Info: Processing ended: Fri Mar 12 17:30:51 2021
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 4752 megabytes
+    Info: Processing ended: Sat Mar 13 16:11:58 2021
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:24
 
 
