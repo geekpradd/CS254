@@ -1,0 +1,420 @@
+# Reading pref.tcl
+# do TwobitUpCount_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/DFlipFlop.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:11 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/DFlipFlop.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DFlipFlop
+# -- Compiling architecture behave of DFlipFlop
+# End time: 21:13:11 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:11 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ANDMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ANDMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ANDMux
+# -- Compiling architecture ARCH of ANDMux
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/AndGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/AndGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AndGate
+# -- Compiling architecture Struct of AndGate
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ORMux
+# -- Compiling architecture ARCH of ORMux
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/OrGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/OrGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity OrGate
+# -- Compiling architecture Struct of OrGate
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NOTMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NOTMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NOTMux
+# -- Compiling architecture ARCH of NOTMux
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NotGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NotGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NotGate
+# -- Compiling architecture Struct of NotGate
+# End time: 21:13:12 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/XORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:12 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/XORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity XORMux
+# -- Compiling architecture ARCH of XORMux
+# End time: 21:13:13 on Mar 18,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwoByOneMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:13 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwoByOneMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TwoByOneMux
+# -- Compiling architecture ARCH of TwoByOneMux
+# End time: 21:13:13 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:13 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity State1
+# -- Compiling architecture ARCHSt1 of State1
+# End time: 21:13:13 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:13 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity State2
+# -- Compiling architecture ARCHSt2 of State2
+# End time: 21:13:13 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwobitUpCount.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:13 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwobitUpCount.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TwobitUpCount
+# -- Compiling architecture ARCHCount of TwobitUpCount
+# End time: 21:13:13 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/StateTransit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:13 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/StateTransit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity StateTransit
+# -- Compiling architecture ARCHState of StateTransit
+# End time: 21:13:14 on Mar 18,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:14 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 21:13:14 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  TestBench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" TestBench 
+# Start time: 21:13:14 on Mar 18,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# Loading work.twobitupcount(archcount)
+# ** Error: (vsim-3732) No default binding for component instance 'dut_instance'.
+#    The following component port is not on the entity:
+#           state
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut_instance File: D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd Line: 28
+# Loading work.statetransit(archstate)
+# Loading work.notmux(arch)
+# Loading work.twobyonemux(arch)
+# Loading work.orgate(struct)
+# Loading work.andgate(struct)
+# Loading work.notgate(struct)
+# Loading work.state1(archst1)
+# Loading work.ormux(arch)
+# Loading work.andmux(arch)
+# Loading work.state2(archst2)
+# Loading work.dflipflop(behave)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./TwobitUpCount_run_msim_rtl_vhdl.do PAUSED at line 25
+do TwobitUpCount_run_msim_rtl_vhdl.do
+# transcript on
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/DFlipFlop.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:55 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/DFlipFlop.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DFlipFlop
+# -- Compiling architecture behave of DFlipFlop
+# End time: 21:14:55 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:55 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ANDMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ANDMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ANDMux
+# -- Compiling architecture ARCH of ANDMux
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/AndGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/AndGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AndGate
+# -- Compiling architecture Struct of AndGate
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/ORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ORMux
+# -- Compiling architecture ARCH of ORMux
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/OrGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/OrGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity OrGate
+# -- Compiling architecture Struct of OrGate
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NOTMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NOTMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NOTMux
+# -- Compiling architecture ARCH of NOTMux
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NotGate.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/NotGate.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NotGate
+# -- Compiling architecture Struct of NotGate
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/XORMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:56 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/XORMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity XORMux
+# -- Compiling architecture ARCH of XORMux
+# End time: 21:14:56 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwoByOneMux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:57 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwoByOneMux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TwoByOneMux
+# -- Compiling architecture ARCH of TwoByOneMux
+# End time: 21:14:57 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:57 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity State1
+# -- Compiling architecture ARCHSt1 of State1
+# End time: 21:14:57 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:57 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/State2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity State2
+# -- Compiling architecture ARCHSt2 of State2
+# End time: 21:14:57 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwobitUpCount.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:57 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/TwobitUpCount.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TwobitUpCount
+# -- Compiling architecture ARCHCount of TwobitUpCount
+# End time: 21:14:57 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/StateTransit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:57 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/StateTransit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity StateTransit
+# -- Compiling architecture ARCHState of StateTransit
+# End time: 21:14:58 on Mar 18,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:58 on Mar 18,2021
+# vcom -reportprogress 300 -93 -work work D:/Courses/Sem4/cs226_digital_logic/CS254/lab6/q1/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 21:14:58 on Mar 18,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  TestBench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" TestBench 
+# Start time: 21:13:14 on Mar 18,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# Loading work.twobitupcount(archcount)
+# Loading work.statetransit(archstate)
+# Loading work.notmux(arch)
+# Loading work.twobyonemux(arch)
+# Loading work.orgate(struct)
+# Loading work.andgate(struct)
+# Loading work.notgate(struct)
+# Loading work.state1(archst1)
+# Loading work.ormux(arch)
+# Loading work.andmux(arch)
+# Loading work.state2(archst2)
+# Loading work.dflipflop(behave)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 22:12:08 on Mar 18,2021, Elapsed time: 0:58:54
+# Errors: 1, Warnings: 0

@@ -1,0 +1,37 @@
+library work;
+use work.all;
+library ieee; 
+use ieee.std_logic_1164.all;
+
+entity StateTransit is
+port ( prev_state : in std_logic_vector(2 downto 0):= "000";
+next_state: out std_logic_vector (2 downto 0));
+end entity;
+
+architecture ARCHState of StateTransit is
+	component NOTMux is
+		port(
+		i: in std_logic;
+		z: out std_logic
+		);
+	end component;
+
+	component State1 is
+		port ( prev_state : in std_logic_vector(2 downto 0);
+		next_s1: out std_logic);
+	end component;
+	
+	component State2 is
+		port ( prev_state : in std_logic_vector(2 downto 0);
+		next_s2: out std_logic);
+	end  component;
+begin
+	chip0: NOTMux
+		port map(prev_state(0), next_state(0)); -- s0_new = ~s0_prev
+
+	chip1: State1	
+		port map(prev_state, next_state(1));
+
+	chip2: State2
+		port map(prev_state, next_state(2));
+end;

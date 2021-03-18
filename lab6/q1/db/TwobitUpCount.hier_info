@@ -1,0 +1,279 @@
+|TwobitUpCount
+clk => DFlipFlop:FlipFlop0.clk
+clk => DFlipFlop:FlipFlop1.clk
+clk => DFlipFlop:FlipFlop2.clk
+rst => DFlipFlop:FlipFlop0.rst
+rst => DFlipFlop:FlipFlop1.rst
+rst => DFlipFlop:FlipFlop2.rst
+count[0] <= DFlipFlop:FlipFlop0.q
+count[1] <= DFlipFlop:FlipFlop1.q
+
+
+|TwobitUpCount|StateTransit:StateChip
+prev_state[0] => NOTMux:chip0.i
+prev_state[0] => State1:chip1.prev_state[0]
+prev_state[0] => State2:chip2.prev_state[0]
+prev_state[1] => State1:chip1.prev_state[1]
+prev_state[1] => State2:chip2.prev_state[1]
+prev_state[2] => State1:chip1.prev_state[2]
+prev_state[2] => State2:chip2.prev_state[2]
+next_state[0] <= NOTMux:chip0.z
+next_state[1] <= State1:chip1.next_s1
+next_state[2] <= State2:chip2.next_s2
+
+
+|TwobitUpCount|StateTransit:StateChip|NOTMux:chip0
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|NOTMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|TwobitUpCount|StateTransit:StateChip|NOTMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|NOTMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|NOTMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|NOTMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1
+prev_state[0] => ORMux:chip1.i0
+prev_state[1] => ORMux:chip1.i1
+prev_state[2] => NOTMux:chip0.i
+next_s1 <= ANDMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|NOTMux:chip0
+i => TwoByOneMux:chip2.sel
+z <= TwoByOneMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|NOTMux:chip0|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|NOTMux:chip0|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|NOTMux:chip0|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|NOTMux:chip0|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|NOTMux:chip0|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State1:chip1|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2
+prev_state[0] => ORMux:chip1.i0
+prev_state[1] => ANDMux:chip2.i1
+prev_state[2] => ORMux:chip1.i1
+next_s2 <= ANDMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ORMux:chip1
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i0
+z <= TwoByOneMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ORMux:chip1|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ORMux:chip1|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ORMux:chip1|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ORMux:chip1|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ANDMux:chip2
+i1 => TwoByOneMux:chip2.sel
+i0 => TwoByOneMux:chip2.i1
+z <= TwoByOneMux:chip2.z
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ANDMux:chip2|TwoByOneMux:chip2
+i0 => AndGate:Chip3.P
+i1 => AndGate:Chip2.P
+sel => AndGate:Chip2.Q
+sel => NotGate:Chip4.K
+z <= OrGate:Chip1.O
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ANDMux:chip2|TwoByOneMux:chip2|OrGate:Chip1
+X => O.IN0
+Y => O.IN1
+O <= O.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip2
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ANDMux:chip2|TwoByOneMux:chip2|AndGate:Chip3
+P => R.IN0
+Q => R.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|StateTransit:StateChip|State2:chip2|ANDMux:chip2|TwoByOneMux:chip2|NotGate:Chip4
+K => L.DATAIN
+L <= K.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|DFlipFlop:FlipFlop0
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|DFlipFlop:FlipFlop1
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TwobitUpCount|DFlipFlop:FlipFlop2
+clk => q~reg0.CLK
+rst => q.OUTPUTSELECT
+d => q.DATAA
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
