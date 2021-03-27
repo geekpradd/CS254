@@ -3,39 +3,57 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_textio.all;
 use std.textio.all;
 
-entity ASCII_Read_test is
+entity TestBench is
 end entity;
 
-architecture reader of ASCII_Read_test is
-	component dummy_module
-		port (a: in std_logic_vector (7 downto 0); z: out std_logic_vector (7 downto 0));
+architecture reader of TestBench is
+	component RLEncoder is
+		port ( clk, rst : in std_logic;
+		input : in std_logic_vector(7 downto 0);
+		output: out std_logic_vector(7 downto 0);
+		valid: out std_logic);
 	end component;
+	
 	signal input_sig, output_sig: std_logic_vector (7 downto 0);
+	signal v,clk,rst: std_logic;
 begin
-	dut_instance: dummy_module
-		port map (a => input_sig, z=> output_sig);
+	dut_instance: RLEncoder
+		port map (clk,rst,input_sig,output_sig,v);
 	
 	process
-		file input_file: text open read_mode is "/home/keerthi/Desktop/Cs_254_Jan_2021/FileAndStringTests/input_file.txt";
-		file output_file: text open write_mode is "/home/keerthi/Desktop/Cs_254_Jan_2021/FileAndStringTests/output_file.txt";
+		file input_file: text open read_mode is "D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/input_file.txt";
+		file output_file: text open write_mode is "D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/output_file.txt";
 		variable input_line, output_line: line;
 		variable input_var, output_var : std_logic_vector (7 downto 0);
-		variable clk: std_logic;
-	
+		
 	begin
-		while not endfile(input_file) loop
-			readline (input_file, input_line);
-			read (input_line, input_var);
-			input_sig <= input_var;
-			clk := '1';
+		rst <= '1';
+		clk <= '1';
+		wait for 20 ns;
+		clk <= '0';
+		wait for 10 ns;
+		rst <= '0';
+		
+		for i in 0 to 96 loop
+			if not endfile(input_file) then
+				readline (input_file, input_line);
+				read (input_line, input_var);
+				input_sig <= input_var;
+			else
+				input_sig <= "00000001";
+			end if;
+			wait for 10 ns;
+			clk <= '1';
 			wait for 20 ns;
+			clk <= '0';
+			wait for 20 ns;
+			
 			output_var := output_sig;
-			write (output_line, output_var);
-			writeline (output_file, output_line);
-			clk := '0';
-			wait for 20 ns;
+			if(v = '1') then
+				write (output_line, output_var);
+				writeline (output_file, output_line);
+			end if;
 		end loop;
-	
 	wait;
 	end process;
 
