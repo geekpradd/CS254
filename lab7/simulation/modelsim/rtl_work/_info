@@ -23,9 +23,9 @@ V5<]GC^PSZc:=UNQJGDffV2
 !s100 7G1J`ak]7M?YJ>72]c]5W2
 Z6 OV;C;2020.1;71
 31
-Z7 !s110 1616850084
+Z7 !s110 1616913826
 !i10b 1
-Z8 !s108 1616850084.000000
+Z8 !s108 1616913826.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/DFlipFlop.vhd|
 Z10 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/DFlipFlop.vhd|
 !i113 1
@@ -55,7 +55,7 @@ R1
 Z13 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R2
 R3
-!i122 6
+!i122 5
 R0
 Z14 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/FourbitUpCount.vhd
 Z15 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab7/FourbitUpCount.vhd
@@ -65,9 +65,9 @@ VVSJI8a61eSIQ_W@eXCDo93
 !s100 VW93CgI:9YQPSX486<nA?1
 R6
 31
-Z16 !s110 1616850085
+Z16 !s110 1616913827
 !i10b 1
-Z17 !s108 1616850085.000000
+Z17 !s108 1616913827.000000
 Z18 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/FourbitUpCount.vhd|
 Z19 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/FourbitUpCount.vhd|
 !i113 1
@@ -78,7 +78,7 @@ R13
 R2
 R3
 DEx4 work 14 fourbitupcount 0 22 VSJI8a61eSIQ_W@eXCDo93
-!i122 6
+!i122 5
 l27
 L13 37
 V4g<6EBiB32`z5VRM1aGDL0
@@ -98,7 +98,7 @@ Z20 w1616849841
 R13
 R2
 R3
-!i122 5
+!i122 6
 R0
 Z21 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/RLEncoder.vhd
 Z22 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab7/RLEncoder.vhd
@@ -121,7 +121,7 @@ R13
 R2
 R3
 DEx4 work 9 rlencoder 0 22 J]TnRCaHWhdPCKcRSJgoc1
-!i122 5
+!i122 6
 l37
 L15 106
 VHjVmUE97VbB>_0`PL?>FB0
@@ -239,7 +239,7 @@ R6
 31
 R16
 !i10b 1
-R17
+R8
 Z43 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/UpDownCounter.vhd|
 Z44 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/UpDownCounter.vhd|
 !i113 1
@@ -259,7 +259,7 @@ R6
 31
 R16
 !i10b 1
-R17
+R8
 R43
 R44
 !i113 1
@@ -280,9 +280,9 @@ VVR5T^nCA25ANC4UQM>l150
 !s100 flDoQ7JF7T>fDK<JjP:B33
 R6
 31
-R16
+R7
 !i10b 1
-R17
+R8
 Z48 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/UpDownStateTransit.vhd|
 Z49 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab7/UpDownStateTransit.vhd|
 !i113 1
@@ -300,9 +300,9 @@ Vojg;>>S4ijUfV^FMI6fdo3
 !s100 BOYdKgRIDCVSE>La6n0jR1
 R6
 31
-R16
+R7
 !i10b 1
-R17
+R8
 R48
 R49
 !i113 1
