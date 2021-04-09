@@ -1,0 +1,270 @@
+# Reading pref.tcl
+# do lab8_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying D:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:04:48 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:04:49 on Apr 09,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab8/TrafficLightContainer.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:04:49 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/TrafficLightContainer.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TrafficLightContainer
+# -- Compiling architecture Arch of TrafficLightContainer
+# End time: 14:04:50 on Apr 09,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:04:50 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:04:50 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 14:04:51 on Apr 09,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# ** Warning: (vsim-3473) Component instance "dut_instance : TrafficLightController" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: D:/quartus-projects/lab8/Testbench.vhd
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do lab8_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:08:07 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:08:07 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab8/TrafficLightContainer.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:08:07 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/TrafficLightContainer.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TrafficLightContainer
+# -- Compiling architecture Arch of TrafficLightContainer
+# End time: 14:08:07 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:08:07 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:08:07 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# End time: 14:08:12 on Apr 09,2021, Elapsed time: 0:03:21
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 14:08:12 on Apr 09,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# ** Warning: (vsim-3473) Component instance "dut_instance : TrafficLightController" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: D:/quartus-projects/lab8/Testbench.vhd
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do lab8_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:13:06 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:13:06 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab8/TrafficLightContainer.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:13:06 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/TrafficLightContainer.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TrafficLightContainer
+# -- Compiling architecture Arch of TrafficLightContainer
+# End time: 14:13:06 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:13:06 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:13:06 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# End time: 14:13:07 on Apr 09,2021, Elapsed time: 0:04:55
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 14:13:07 on Apr 09,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# ** Warning: (vsim-3473) Component instance "dut_instance : TrafficLightController" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: D:/quartus-projects/lab8/Testbench.vhd
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do lab8_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:16:57 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:16:57 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/quartus-projects/lab8/TrafficLightContainer.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:16:57 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/TrafficLightContainer.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TrafficLightContainer
+# -- Compiling architecture Arch of TrafficLightContainer
+# End time: 14:16:57 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 14:16:57 on Apr 09,2021
+# vcom -reportprogress 300 -93 -work work D:/quartus-projects/lab8/Testbench.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TestBench
+# -- Compiling architecture tb of TestBench
+# End time: 14:16:57 on Apr 09,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
+# End time: 14:16:58 on Apr 09,2021, Elapsed time: 0:03:51
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs=""+acc"" Testbench 
+# Start time: 14:16:58 on Apr 09,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb)
+# ** Warning: (vsim-3473) Component instance "dut_instance : TrafficLightController" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: D:/quartus-projects/lab8/Testbench.vhd
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 14:19:51 on Apr 09,2021, Elapsed time: 0:02:53
+# Errors: 0, Warnings: 1
