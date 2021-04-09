@@ -5,10 +5,10 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
-vcom -93 -work work {D:/quartus-projects/lab8/TrafficLightContainer.vhdl}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/Testbench.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/TrafficLightController.vhd}
 
-vcom -93 -work work {D:/quartus-projects/lab8/Testbench.vhd}
+vcom -93 -work work {D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/Testbench.vhd}
 
 vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  Testbench
 

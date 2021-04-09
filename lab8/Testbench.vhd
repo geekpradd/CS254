@@ -21,9 +21,11 @@ begin
 	process
 	begin 
 	clk <= '0';
-	wait for 2.5 sec;
+	wait for 1 us;
 	clk <= '1';
 	wait for 2.5 sec;
 	rst <= '0';
+	clk <= '0';
+	wait for 2499999 us;
 	end process;
 end tb;

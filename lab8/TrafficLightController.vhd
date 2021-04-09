@@ -1,0 +1,52 @@
+library work;
+use work.all;
+library ieee; 
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity TrafficLightController is
+	port (clk, rst: in std_logic;
+	green, yellow, red: out std_logic_vector(3 downto 0));
+end entity;
+
+architecture Arch of TrafficLightController is
+begin
+			
+	process(clk, rst)
+	variable counter: integer range 0 to 6 := 0;
+	variable current_lane: integer range 0 to 3 := 0;
+	
+	begin
+		if rising_edge(clk) then
+			if rst = '1' then
+				counter :=  0;
+				green <= "0001";
+				yellow <= "0000";
+				red <= "1110";
+				current_lane := 0;
+			
+			elsif counter = 5 then
+				green(current_lane) <= '0';
+				yellow(current_lane) <= '1';
+				counter := counter + 1;
+				
+			elsif counter = 6 then
+				yellow(current_lane) <= '0';
+				red(current_lane) <= '1';				
+				
+				if current_lane = 3 then
+					current_lane := 0;
+				else
+					current_lane := current_lane + 1;
+				end if;
+				red(current_lane) <= '0';
+				green(current_lane) <= '1';
+				counter := 0;
+			else 
+				counter := counter + 1;
+			end if;
+				
+		end if;
+	end process;
+end Arch;
+	

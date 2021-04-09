@@ -8,27 +8,27 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/quartus-projects/lab8/simulation/modelsim
+Z0 dD:/Courses/Sem4/cs226_digital_logic/CS254/lab8/simulation/modelsim
 Etestbench
-Z1 w1617957861
+Z1 w1617964062
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 !i122 2
 R0
-Z5 8D:/quartus-projects/lab8/Testbench.vhd
-Z6 FD:/quartus-projects/lab8/Testbench.vhd
+Z5 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/Testbench.vhd
+Z6 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab8/Testbench.vhd
 l0
 L5 1
 VZ=QDQD6L`id6P4Ta6kV>71
 !s100 3i6eAkN?E_`P`z3o4T:bP0
 Z7 OV;C;2020.1;71
 31
-Z8 !s110 1617958017
+Z8 !s110 1617964522
 !i10b 1
-Z9 !s108 1617958017.000000
-Z10 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab8/Testbench.vhd|
-Z11 !s107 D:/quartus-projects/lab8/Testbench.vhd|
+Z9 !s108 1617964522.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/Testbench.vhd|
+Z11 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/Testbench.vhd|
 !i113 1
 Z12 o-93 -work work
 Z13 tExplicit 1 CvgOpt 0
@@ -39,9 +39,9 @@ R4
 Z14 DEx4 work 9 testbench 0 22 Z=QDQD6L`id6P4Ta6kV>71
 !i122 2
 l16
-Z15 L8 22
-Z16 VcNkkVcd67G<Sj4lH>BNl^3
-Z17 !s100 5;cXb2T=oQeF=6=GlITn72
+Z15 L8 24
+Z16 V1jbXX<=:igd`FI4IAYCeg2
+Z17 !s100 g;aBdN<og?gAkLDagfZK62
 R7
 31
 R8
@@ -52,26 +52,26 @@ R11
 !i113 1
 R12
 R13
-Etrafficlightcontainer
-Z18 w1617957960
+Etrafficlightcontroller
+Z18 w1617964507
 R2
 R3
 R4
 !i122 1
 R0
-Z19 8D:/quartus-projects/lab8/TrafficLightContainer.vhdl
-Z20 FD:/quartus-projects/lab8/TrafficLightContainer.vhdl
+Z19 8D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/TrafficLightController.vhd
+Z20 FD:/Courses/Sem4/cs226_digital_logic/CS254/lab8/TrafficLightController.vhd
 l0
 L7 1
-VPB:VUiak:?32GYA6zMQo=1
-!s100 8MzDQ==Gon[gnfcI:B37:1
+VglZHSGeP@eb_?W0dKC>`33
+!s100 :G=f[PoJjGnV^:5d<[n:T1
 R7
 31
 R8
 !i10b 1
 R9
-Z21 !s90 -reportprogress|300|-93|-work|work|D:/quartus-projects/lab8/TrafficLightContainer.vhdl|
-Z22 !s107 D:/quartus-projects/lab8/TrafficLightContainer.vhdl|
+Z21 !s90 -reportprogress|300|-93|-work|work|D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/TrafficLightController.vhd|
+Z22 !s107 D:/Courses/Sem4/cs226_digital_logic/CS254/lab8/TrafficLightController.vhd|
 !i113 1
 R12
 R13
@@ -79,12 +79,12 @@ Aarch
 R2
 R3
 R4
-DEx4 work 21 trafficlightcontainer 0 22 PB:VUiak:?32GYA6zMQo=1
+DEx4 work 22 trafficlightcontroller 0 22 glZHSGeP@eb_?W0dKC>`33
 !i122 1
 l13
-L12 54
-VOH:lJdG2RWiOmhE1SFmEm0
-!s100 >aNNX3MgAIAZ51[?=dlLm2
+L12 40
+VZb6jnZaVhDInTZZB:VgnJ0
+!s100 ]IWcVDeQ3m:`0Po<CS_Ed1
 R7
 31
 R8
